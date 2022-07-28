@@ -7,7 +7,7 @@ CREATE TABLE tbl_board(
     primary key(num)
 );
 
-INSERT INTO tbl_board(title, content, name) VALUES ('제목1', '내용1', '이름1');
+INSERT INTO tbl_board( title, content, name) VALUES ('제목1', '내용1', '이름1');
 INSERT INTO tbl_board( title, content, name) VALUES ('제목2', '내용2', '이름2');
 INSERT INTO tbl_board( title, content, name) VALUES ('제목3', '내용3', '이름3');
 INSERT INTO tbl_board( title, content, name) VALUES ('제목4', '내용4', '이름4');
