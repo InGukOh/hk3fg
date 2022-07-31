@@ -12,4 +12,14 @@ public interface BoardMapper {
                         // BoardMapper.xml에서 메소드 id와 같도록 함
 
     List<Board> getList();
+
+    Board getBoard(Long num); // 게시글 목록 가져오기
+
+    void uploadBoard(Board board); // 게시글 등록
+
+    Object updateBoard(Board board); // 게시글 수정
+
+    void deleteBoard(Long num); // 게시글 삭제
+
+    void viewCount(Long num); //게시글 조회수 +1 상승
 }

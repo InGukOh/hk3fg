@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Upload</title>
+</head>
+<body>
+<div class="container">
+  <form th:action="@{upload}" method="post">
+
+    <input type="text" class="form-control" name="name" placeholder="작성자">
+    <input type="text" class="form-control" name="title" placeholder="제목">
+    <textarea class="form-control" name="content" placeholder="내용"></textarea>
+
+    <button type="submit">글 작성</button>
+  </form>
+</div>
+</body>
+</html>

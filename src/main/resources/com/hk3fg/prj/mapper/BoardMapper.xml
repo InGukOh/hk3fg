@@ -9,6 +9,26 @@
     </select>
 
     <select id="getList" resultType="com.hk3fg.prj.domain.Board">
-        SELECT * FROM tbl_board   //  게시글 리스트 반환
+        SELECT * FROM tbl_board   // 게시글 리스트 반환
     </select>
+
+    <select id="getBoard" parameterType="Long" resultType="com.hk3fg.prj.domain.Board">
+        SELECT * FROM tbl_board where num=#{num}; //게시글 읽기
+    </select>
+
+    <insert id="uploadBoard" parameterType="com.hk3fg.prj.domain.Board">
+        INSERT INTO tbl_board (title, content, name) VALUES (#{title}, #{content}, #{name}); // 게시글 등록
+    </insert>
+
+    <update id="viewCount">
+        UPDATE tbl_board SET read = read + 1 WHERE num=#{num}; // 게시글 조회수 +1상승
+    </update>
+
+    <update id="updateBoard" parameterType="com.hk3fg.prj.domain.Board">
+        UPDATE tbl_board SET title=#{title}, content=#{content} WHERE num=#{num}; // 게시글 수정
+    </update>
+
+    <delete id="deleteBoard" parameterType="Long">
+        DELETE FROM tbl_board WHERE num=#{num}; // 게시글 삭제
+    </delete>
 </mapper>

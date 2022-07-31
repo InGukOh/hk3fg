@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns xmlns:th="http://www.w3.org/1999/xhtml" : th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Update</title>
+</head>
+<body>
+<div class="container">
+  <form id="form" th:action="@{update}" method="post">
+    <p>글번호 : [[${update.num}]]</p>
+
+    <p> 제목 : </p>
+    <div id="title">
+            <textarea class="form-control" placeholder='제목 입력' name="title">[[${update.title}]]</textarea>
+    </div>
+
+    <p>작성자 : [[${update.name}]]</p>
+
+    <p> 내용 : </p>
+    <div id="content">
+            <textarea class="form-control" placeholder='내용 입력' name="content">[[${update.content}]]</textarea>
+    </div>
+
+    <input type="hidden" name="num" th:value="${update.num}">
+    <button type="submit">저장</button>
+  </form>
+</div>
+</body>
+</html>

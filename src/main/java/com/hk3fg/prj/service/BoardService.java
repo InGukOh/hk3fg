@@ -21,4 +21,27 @@ public class BoardService {
     public List<Board> boardList() {
         return boardMapper.getList(); // 게시글 리스트 반환
     }
+    public Board getBoard(Long num) {
+        return boardMapper.getBoard(num);
+    }
+    @Transactional
+    public void uploadBoard(Board board) {
+        boardMapper.uploadBoard(board);
+    }
+    @Transactional
+    public Object updateBoard(Board board) {
+        // boardMapper.updateBoard(board);
+        return boardMapper.updateBoard(board);
+    }
+
+    @Transactional
+    public void deleteBoard(Long num) {
+        boardMapper.deleteBoard(num);
+    }
+
+    public void viewCount(Long num) {
+        boardMapper.viewCount(num);
+    }
+
+
 }
