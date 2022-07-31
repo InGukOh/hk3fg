@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns xmlns:th="http://www.thymeleaf.org">
+<html 	lang="ko"
+         xmlns="http://www.w3.org/1999/xhtml"
+         xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <meta charset="UTF-8">
@@ -14,7 +16,7 @@
         <th>제목</th>
         <th>조회수</th>
         </thead>
-        <tr th:each="list :${list.sequence(1, 10)}"> <!--타임리프를 이용해 리스트 형식의 데이터를 가공할 수 있도록 함.-->
+        <tr th:each="list :${list}"> <!--타임리프를 이용해 리스트 형식의 데이터를 가공할 수 있도록 함.-->
             <td>[[${list.num}]]</td>
             <td>[[${list.name}]]</td>
             <td>
