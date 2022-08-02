@@ -91,7 +91,7 @@ public class BoardService {
                 : totalLastPageNum;
 
         // 페이지 시작 번호 조정
-        curPageNum = (curPageNum <= 3) ? 1 : curPageNum;
+        curPageNum = (curPageNum <= 20) ? 1 : curPageNum;
 
         // 페이지 번호 할당
         for (int val = curPageNum, idx = 0; val <= blockLastPageNum; val++, idx++) {
