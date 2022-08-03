@@ -45,11 +45,22 @@
     </table>
 
     <div>
-        <span> <a href="@{'/?page=' + ${pageNum-1}}"> < </a> </span>
+
+        <!--<a th:href="pageNum : (pagenum > 10)? 1 : ${pageNum-10}"> < </a>-->
+        <a th:href="@{/?page=1}">
+            <span> << </span>
+        </a>
+        <a th:href="@{'/?page=' + ${prevBlock}}"> < </a>
+
         <span th:each="pageNum : ${pageList}" th:inline="text">
             <a th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>
         </span>
-        <span> <a href="@{'/?page=' + ${pageNum+1}}"> > </a> </span>
+
+        <a th:href="@{'/?page=' + ${nextBlock}}"> > </a>
+
+        <!--<a th:href="pageNum : ${pageNum+10}"> > </a>-->
+
+
     </div>
 
     <hr>

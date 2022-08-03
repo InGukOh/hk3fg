@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @Controller
 @AllArgsConstructor
@@ -17,12 +17,25 @@ public class BoardController {
     /* 게시글 목록 */
     @GetMapping("/")
     public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
+
+
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
         Integer[] pageList = boardService.getPageList(pageNum);
+        System.out.println((pageList[0]==null));
+        int max = 0;
+        for (int i = 0; i<10; i++){
+            if(pageList[i]==null){
+                break;
+            } else {
+                max = pageList[i];
+            }
+        }
+        System.out.println("컨트롤러 리스트 : " + Arrays.toString(pageList) + " max : "+max);
 
         model.addAttribute("boardList", boardList);
         model.addAttribute("pageList", pageList);
-
+        model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
+        model.addAttribute("nextBlock",(pageNum+10 >= 0)? max-pageNum : pageNum+10);
         return "board/list";
     }
 

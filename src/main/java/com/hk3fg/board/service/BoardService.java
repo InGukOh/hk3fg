@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +20,7 @@ import java.util.Optional;
 public class BoardService {
     private BoardRepository boardRepository;
 
-    private static final int BLOCK_PAGE_NUM_COUNT = 20;  // 블럭에 존재하는 페이지 번호 수
+    private static final int BLOCK_PAGE_NUM_COUNT = 10;  // 블럭에 존재하는 페이지 번호 수
     private static final int PAGE_POST_COUNT = 20;       // 한 페이지에 존재하는 게시글 수
 
     @Transactional
@@ -74,30 +75,36 @@ public class BoardService {
     }
 
     public Integer[] getPageList(Integer curPageNum) {
-        Integer[] pageList = new Integer[BLOCK_PAGE_NUM_COUNT];
+        System.out.println(Integer.toString(curPageNum));
+
 
         // 총 게시글 갯수
         Double postsTotalCount = Double.valueOf(this.getBoardCount());
 
         // 총 게시글 기준으로 계산한 마지막 페이지 번호 계산
         Integer totalLastPageNum = (int)(Math.ceil((postsTotalCount/PAGE_POST_COUNT)));
-        System.out.println(totalLastPageNum+"------------------------------------------------------------");
-        if(totalLastPageNum > BLOCK_PAGE_NUM_COUNT){
-            totalLastPageNum = totalLastPageNum-BLOCK_PAGE_NUM_COUNT;
-        }
+
+        Integer[] pageList = new Integer[BLOCK_PAGE_NUM_COUNT];
+
         // 현재 페이지를 기준으로 블럭의 마지막 페이지 번호 계산
         Integer blockLastPageNum = (totalLastPageNum > curPageNum + BLOCK_PAGE_NUM_COUNT)
                 ? curPageNum + BLOCK_PAGE_NUM_COUNT
                 : totalLastPageNum;
 
+        System.out.println("BLP : " + blockLastPageNum);
+
         // 페이지 시작 번호 조정
-        curPageNum = (curPageNum <= 20) ? 1 : curPageNum;
+        curPageNum = (curPageNum-5<=0)? 1:curPageNum-5;
+        Integer[] F_Page = new Integer[3];
+        Integer[] B_Page = new Integer[3];
 
         // 페이지 번호 할당
-        for (int val = curPageNum, idx = 0; val <= blockLastPageNum; val++, idx++) {
-            pageList[idx] = val;
+        int calc = (curPageNum + 9 < blockLastPageNum)? curPageNum + 9 : blockLastPageNum;
+        for (int val = curPageNum, idx = 0; val <= calc; val++, idx++) {
+           pageList[idx] = val;
+           System.out.println("idx : "+pageList[idx]);
         }
-        System.out.println("idx" +  curPageNum + "======================================================================================");
+        System.out.println("현재 페이지 "+curPageNum+" 전체 페이지 갯수 "+ totalLastPageNum+" pageList " + Arrays.toString(pageList));
 
         return pageList;
     }
