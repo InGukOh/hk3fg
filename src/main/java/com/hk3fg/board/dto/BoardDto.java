@@ -18,6 +18,7 @@ public class BoardDto {
     private LocalDateTime modifiedDate;
 
 
+
     public BoardEntity toEntity(){
         BoardEntity boardEntity = BoardEntity.builder()
                 .id(id)
@@ -37,4 +38,6 @@ public class BoardDto {
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
     }
+
+
 }
