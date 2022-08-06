@@ -1,4 +1,8 @@
+div#mainContent{
+    padding: 0px 30px;
+}
 table {
+    text-align: center;
     border-collapse: collapse;
 }
 
