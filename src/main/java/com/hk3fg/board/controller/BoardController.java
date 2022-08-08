@@ -18,7 +18,6 @@ public class BoardController {
     @GetMapping("/")
     public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
 
-
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
         Integer[] pageList = boardService.getPageList(pageNum);
         System.out.println((pageList[0]==null));
@@ -49,15 +48,23 @@ public class BoardController {
         return "board/detail";
     }
 
+    /* 로그인 */
+    @GetMapping("/login")
+    public  String login(){
+        return "board/login";
+    }
+
 
     /* 게시글 쓰기 */
     @GetMapping("/post")
     public String write() {
+        System.out.println("BC:여기서 작동-작성");
         return "board/write";
     }
 
     @PostMapping("/post")
     public String write(BoardDto boardDto) {
+        System.out.println("BC:여기서 작동-저장");
         boardService.savePost(boardDto);
 
         return "redirect:/";

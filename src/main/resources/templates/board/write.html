@@ -8,9 +8,24 @@
     <form  action="/post" method="post">
         제목 : <input type="text" name="title"> <br>
         작성자 : <input type="text" name="writer"> <br>
-        <textarea name="content"></textarea><br>
 
-        <input type="submit" value="등록">
+        <div contenteditable="true" id="test">
+            <p>시험제작</p>
+        </div>
+
+        <textarea name="content" id="append" ></textarea><br>
+
+        <input type="submit" value="등록" id="temp">
     </form>
+    <button type="button" onclick="location.href='list.html'">리스트</button>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#temp').click(function() {
+                $('#append').val($('#test').html());
+            })
+        });
+    </script>
 </body>
 </html>

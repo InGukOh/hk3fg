@@ -20,6 +20,7 @@ public class BoardDto {
 
 
     public BoardEntity toEntity(){
+        System.out.println("BDTO:여기서 작동1");
         BoardEntity boardEntity = BoardEntity.builder()
                 .id(id)
                 .writer(writer)
@@ -31,6 +32,7 @@ public class BoardDto {
 
     @Builder
     public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
+        System.out.println("BDTO:여기서 작동2");
         this.id = id;
         this.writer = writer;
         this.title = title;
