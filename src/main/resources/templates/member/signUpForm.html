@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/signUp.css}">
+</head>
+<body>
+  <h1>회원가입</h1>
+  <hr>
+  <form action="/member/signUp" th:object="${member}" method="post">
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+      <input type="text" th:field="*{uID}" placeholder="가입 아이디">
+      <input type="password" th:field="*{uPW}" placeholder="가입 비밀번호">
+      <button type="submit">회원가입</button>
+  </form>
+</body>
+</html>
+</html>

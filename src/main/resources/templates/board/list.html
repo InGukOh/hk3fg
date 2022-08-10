@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>List</title>
@@ -11,7 +11,13 @@
     <!-- HEADER -->
     <div th:insert="common/header.html" id="header"></div>
     <div id="mainContent">
-        <a th:href="@{/login}">로그인</a>
+        <h3 sec:authorize="isAuthenticated()">안녕하세요,<span sec:authentication="name"></span>!!</h3>
+        <hr>
+        <a sec:authorize="isAnonymous()" th:href="@{/member/login}">로그인</a>
+        <a sec:authorize="isAuthenticated()" th:href="@{/member/logout}">로그아웃</a>
+        <a sec:authorize="isAnonymous()" th:href="@{/member/signUp}">회원가입</a>
+        <br>
+        <hr>
         <br>
         <a th:href="@{/post}">글쓰기</a>
 

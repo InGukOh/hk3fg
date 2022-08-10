@@ -1,7 +1,9 @@
 package com.hk3fg.board.controller;
 
 import com.hk3fg.board.dto.BoardDto;
+import com.hk3fg.board.dto.UserDto;
 import com.hk3fg.board.service.BoardService;
+import com.hk3fg.board.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +15,8 @@ import java.util.*;
 @AllArgsConstructor
 public class BoardController {
     private BoardService boardService;
+
+    private LoginService loginService;
 
     /* 게시글 목록 */
     @GetMapping("/")
@@ -48,11 +52,27 @@ public class BoardController {
         return "board/detail";
     }
 
-    /* 로그인 */
-    @GetMapping("/login")
-    public  String login(){
-        return "board/login";
+    //=====================회원관련==================
+    @GetMapping("/member/signUp")
+    public String signUpForm(Model model){
+        System.out.println("UC에서 들어감");
+        model.addAttribute("member",new UserDto());
+
+        return "/member/signUpForm";
     }
+
+    @PostMapping("/member/signUp")
+    public String signUp(UserDto userDto){
+        loginService.signUp(userDto);
+        return "redirect:/";
+    }
+
+    @GetMapping("/member/login")
+    public String login() {
+
+        return "/member/loginForm";
+    }
+    //=====================회원관련==================
 
 
     /* 게시글 쓰기 */

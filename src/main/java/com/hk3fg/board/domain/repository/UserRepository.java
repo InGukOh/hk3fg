@@ -3,9 +3,9 @@ package com.hk3fg.board.domain.repository;
 import com.hk3fg.board.domain.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
-    public static void test(){
-        System.out.println("UserRep : 실행됨");
-    }
+    Optional<UserEntity> findByUID(String uID);
 }

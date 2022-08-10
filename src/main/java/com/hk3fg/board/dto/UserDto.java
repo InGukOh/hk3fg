@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@ToString
 @NoArgsConstructor
 public class UserDto {
 
@@ -22,13 +21,17 @@ public class UserDto {
     private LocalDateTime cancel_date;
 
     public UserEntity userEntity(){
-        System.out.println("UserDTO : 실행됨");
         UserEntity userEntity = UserEntity.builder()
                 .uID_Num(uID_Num)
                 .uID(uID)
                 .uPW(uPW)
-                //.join_date(join_date)
                 .build();
         return userEntity;
+    }
+    @Builder
+    public UserDto(Long uID_Num, String uID, String uPW){
+        this.uID_Num = uID_Num;
+        this.uID = uID;
+        this.uPW = uPW;
     }
 }
