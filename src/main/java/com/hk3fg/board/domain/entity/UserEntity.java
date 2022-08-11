@@ -41,10 +41,11 @@ public class UserEntity  {
                       LocalDateTime join_date,
                       LocalDateTime cancel_date) {
         System.out.println("UserEnt : 실행됨");
+        System.out.println("jd : " + join_date);
         this.uID_Num = uID_Num;
         this.uID = uID;
         this.uPW = uPW;
-        this.join_date = join_date;
+        this.join_date = LocalDateTime.now();
         this.cancel_date = cancel_date;
     }
 }

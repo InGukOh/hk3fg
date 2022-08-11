@@ -21,17 +21,21 @@ public class UserDto {
     private LocalDateTime cancel_date;
 
     public UserEntity userEntity(){
+        //System.out.println("UDto : 들어감1");
         UserEntity userEntity = UserEntity.builder()
                 .uID_Num(uID_Num)
                 .uID(uID)
                 .uPW(uPW)
+                .join_date(join_date)
                 .build();
         return userEntity;
     }
     @Builder
-    public UserDto(Long uID_Num, String uID, String uPW){
+    public UserDto(Long uID_Num, String uID, String uPW, LocalDateTime join_date){
+        //System.out.println("UDto : 들어감2");
         this.uID_Num = uID_Num;
         this.uID = uID;
         this.uPW = uPW;
+        this.join_date = join_date;
     }
 }

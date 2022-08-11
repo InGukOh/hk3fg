@@ -33,6 +33,7 @@ public class LoginService implements UserDetailsService {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         userDto.setUPW(passwordEncoder.encode(userDto.getUPW()));
 
+        //System.out.println("LS : 들어감");
         return userRepository.save(userDto.userEntity()).getUID_Num();
     }
     @Override
