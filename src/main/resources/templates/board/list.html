@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html xmlns:sec="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="UTF-8">
     <title>List</title>
@@ -10,13 +13,18 @@
 <body>
     <!-- HEADER -->
     <div th:insert="common/header.html" id="header"></div>
+
+    <h3 th:if="${Login_UID != 'anonymousUser'}">안녕하세요,<span th:text="${Login_UID}"></span>!!</h3>
+    <hr>
+
+
+    <a sec:authorize ="denyAll()" th:href="@{/member/login}" >로그인</a>
+    <a sec:authorize ="isAuthenticated()" th:href="@{/member/logout}" >로그아웃</a>
+    <a sec:authorize ="isAnonymous()" th:href="@{/member/signUp}">회원가입</a>
+    <br>
+    <hr>
     <div id="mainContent">
-        <h3 sec:authorize="isAuthenticated()">안녕하세요,<span sec:authentication="name"></span>!!</h3>
-        <hr>
-        <a sec:authorize="isAnonymous()" th:href="@{/member/login}">로그인</a>
-        <a sec:authorize="isAuthenticated()" th:href="@{/member/logout}">로그아웃</a>
-        <a sec:authorize="isAnonymous()" th:href="@{/member/signUp}">회원가입</a>
-        <br>
+
         <hr>
         <br>
         <a th:href="@{/post}">글쓰기</a>

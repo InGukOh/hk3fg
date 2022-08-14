@@ -5,6 +5,7 @@
     <title>Write</title>
 </head>
 <body>
+    <p th:object="${member}"></p>
     <form  action="/post" method="post">
         제목 : <input type="text" name="title"> <br>
         작성자 : <input type="text" name="writer"> <br>

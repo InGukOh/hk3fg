@@ -5,10 +5,14 @@ import com.hk3fg.board.dto.UserDto;
 import com.hk3fg.board.service.BoardService;
 import com.hk3fg.board.service.LoginService;
 import lombok.AllArgsConstructor;
+
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.*;
 
 @Controller
@@ -18,9 +22,21 @@ public class BoardController {
 
     private LoginService loginService;
 
+
+
     /* 게시글 목록 */
     @GetMapping("/")
     public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
+
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails)principal).getUsername();
+        } else {
+            username = principal.toString();
+        }
+
+        System.out.println(username);
 
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
         Integer[] pageList = boardService.getPageList(pageNum);
@@ -39,7 +55,10 @@ public class BoardController {
         model.addAttribute("pageList", pageList);
         model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
         model.addAttribute("nextBlock",(pageNum+10 >= 0)? max-pageNum : pageNum+10);
-        return "board/list";
+
+        model.addAttribute("Login_UID",username);
+
+        return "/board/list";
     }
 
 
@@ -58,6 +77,7 @@ public class BoardController {
         System.out.println("UC에서 들어감");
         model.addAttribute("member",new UserDto());
 
+
         return "/member/signUpForm";
     }
 
@@ -68,10 +88,11 @@ public class BoardController {
     }
 
     @GetMapping("/member/login")
-    public String login() {
+    public String login(Model model) {
 
         return "/member/loginForm";
     }
+
     //=====================회원관련==================
 
 
@@ -121,6 +142,6 @@ public class BoardController {
 
         model.addAttribute("boardList", boardDtoList);
 
-        return "board/list";
+        return "list.jsp";
     }
 }

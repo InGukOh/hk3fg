@@ -1,7 +1,5 @@
 package com.hk3fg.board.service;
 
-
-
 import com.hk3fg.board.domain.entity.UserEntity;
 import com.hk3fg.board.domain.repository.UserRepository;
 import com.hk3fg.board.dto.UserDto;
@@ -33,15 +31,18 @@ public class LoginService implements UserDetailsService {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         userDto.setUPW(passwordEncoder.encode(userDto.getUPW()));
 
-        //System.out.println("LS : 들어감");
+        System.out.println("LS : 들어감");
         return userRepository.save(userDto.userEntity()).getUID_Num();
     }
     @Override
     public UserDetails loadUserByUsername(String uID) throws UsernameNotFoundException {
         Optional<UserEntity> userEntityWrapper = userRepository.findByUID(uID);
+        System.out.println("LS2 : 들어감");
         UserEntity userEntity = userEntityWrapper.get();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
+
+
 
         if("admin".equals(uID)){
             authorities.add(new SimpleGrantedAuthority(Role.ADMIN.getValue()));
