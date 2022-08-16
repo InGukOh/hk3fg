@@ -31,8 +31,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/**").permitAll()
+                .antMatchers("/**")
+                .permitAll()
                 .and()
             .formLogin()
                 .loginPage("/member/login")
@@ -45,11 +47,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .and()
                 .exceptionHandling();
-        http.cors().and();
-        http.csrf().disable();
+        //http.cors().and();
+       // http.csrf().disable();
+        System.out.println("SC1:실행됨");
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth)throws Exception {
         auth.userDetailsService(loginService).passwordEncoder(passwordEncoder());
+        System.out.println("SC2:실행됨");
     }
 }

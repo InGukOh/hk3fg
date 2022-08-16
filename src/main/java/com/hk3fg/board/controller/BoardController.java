@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.*;
 
 @Controller
@@ -31,6 +30,7 @@ public class BoardController {
         } else {
             username = principal.toString();
         }
+
         return username;
     }
 
@@ -40,11 +40,9 @@ public class BoardController {
 
         String username = get_Uid();
 
-        System.out.println(username);
-
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
         Integer[] pageList = boardService.getPageList(pageNum);
-        System.out.println((pageList[0]==null));
+
         int max = 0;
         for (int i = 0; i<10; i++){
             if(pageList[i]==null){
@@ -122,7 +120,8 @@ public class BoardController {
     @GetMapping("/post/edit/{no}")
     public String edit(@PathVariable("no") Long no, Model model) {
         BoardDto boardDTO = boardService.getPost(no);
-
+        String username = get_Uid();
+        model.addAttribute("Login_UID",username);
         model.addAttribute("boardDto", boardDTO);
         return "board/update";
     }
