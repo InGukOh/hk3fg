@@ -8,13 +8,25 @@
     <p th:object="${member}"></p>
     <form  action="/post" method="post">
         제목 : <input type="text" name="title"> <br>
-        작성자 : <input type="text" name="writer"> <br>
+        <th:block th:if="${Login_UID != 'anonymousUser'}">
+            <input type="text" name="writer" hidden="hidden" th:value="${Login_UID}">
+        </th:block>
 
-        <div contenteditable="true" id="test">
-            <p>시험제작</p>
+        <th:block th:if="${Login_UID != 'anonymousUser'}">
+            <p><span th:text="${Login_UID}"></span></p>
+        </th:block>
+      <!--   <input type="text" name="writer" hidden="hidden" th:if="${Login_UID != 'anonymousUser'}" th:value="${Login_UID}"> -->
+
+        <th:block th:if="${Login_UID == 'anonymousUser'}">
+            <input type="text" name="writer" hidden="hidden" th:value="anonymousUser">
+        </th:block>
+
+
+        <div contenteditable="true" id="test" aria-placeholder="여기입력">
+
         </div>
 
-        <textarea name="content" id="append" ></textarea><br>
+        <textarea name="content" id="append" hidden="hidden"></textarea><br>
 
         <input type="submit" value="등록" id="temp">
     </form>

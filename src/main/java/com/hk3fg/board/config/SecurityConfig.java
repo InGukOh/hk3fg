@@ -45,6 +45,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .and()
                 .exceptionHandling();
+        http.cors().and();
+        http.csrf().disable();
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth)throws Exception {

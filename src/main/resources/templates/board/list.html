@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
-<html xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="UTF-8">
@@ -17,8 +17,9 @@
     <h3 th:if="${Login_UID != 'anonymousUser'}">안녕하세요,<span th:text="${Login_UID}"></span>!!</h3>
     <hr>
 
+    <sec:authorize access="denyAll()"></sec:authorize>
 
-    <a sec:authorize ="denyAll()" th:href="@{/member/login}" >로그인</a>
+    <a sec:authorize ="isAnonymous()" th:href="@{/member/login}" >로그인</a>
     <a sec:authorize ="isAuthenticated()" th:href="@{/member/logout}" >로그아웃</a>
     <a sec:authorize ="isAnonymous()" th:href="@{/member/signUp}">회원가입</a>
     <br>

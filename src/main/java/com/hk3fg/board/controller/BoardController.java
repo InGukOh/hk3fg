@@ -23,11 +23,7 @@ public class BoardController {
     private LoginService loginService;
 
 
-
-    /* 게시글 목록 */
-    @GetMapping("/")
-    public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
-
+    public String get_Uid(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
         if (principal instanceof UserDetails) {
@@ -35,6 +31,14 @@ public class BoardController {
         } else {
             username = principal.toString();
         }
+        return username;
+    }
+
+    /* 게시글 목록 */
+    @GetMapping("/")
+    public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
+
+        String username = get_Uid();
 
         System.out.println(username);
 
@@ -98,8 +102,10 @@ public class BoardController {
 
     /* 게시글 쓰기 */
     @GetMapping("/post")
-    public String write() {
-        System.out.println("BC:여기서 작동-작성");
+    public String write(Model model) {
+        String username = get_Uid();
+        model.addAttribute("Login_UID",username);
+        System.out.println("BC:여기서 작동-작성 / 정상적 반환");
         return "board/write";
     }
 
@@ -142,6 +148,6 @@ public class BoardController {
 
         model.addAttribute("boardList", boardDtoList);
 
-        return "list.jsp";
+        return "board/list";
     }
 }
