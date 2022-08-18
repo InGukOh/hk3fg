@@ -10,7 +10,6 @@
             $('#append').val($('#test').html());
             $("form_write").submit();
         }
-
     });
 /*
 });*/
