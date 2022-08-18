@@ -6,21 +6,20 @@
 </head>
 <body>
     <p th:object="${member}"></p>
-    <form  action="/post" method="post">
-        제목 : <input type="text" name="title"> <br>
+    <form  action="/post" method="post" id="form_write">
+        제목 : <input type="text" name="title" id="title"> <br>
         <th:block th:if="${Login_UID != 'anonymousUser'}">
             <input type="text" name="writer" hidden="hidden" th:value="${Login_UID}">
         </th:block>
 
         <th:block th:if="${Login_UID != 'anonymousUser'}">
-            <p><span th:text="${Login_UID}"></span></p>
+            <p>작성자 : <span th:text="${Login_UID}"></span></p>
         </th:block>
       <!--   <input type="text" name="writer" hidden="hidden" th:if="${Login_UID != 'anonymousUser'}" th:value="${Login_UID}"> -->
 
         <th:block th:if="${Login_UID == 'anonymousUser'}">
-            <input type="text" name="writer" hidden="hidden" th:value="anonymousUser">
+            익명 작성자<input type="text" name="writer" hidden="hidden" th:value="anonymousUser">
         </th:block>
-
 
         <div contenteditable="true" id="test" aria-placeholder="여기입력">
 
@@ -28,17 +27,12 @@
 
         <textarea name="content" id="append" hidden="hidden"></textarea><br>
 
+        <button type="submit" id="btn_submit"></button>
         <input type="submit" value="등록" id="temp">
     </form>
     <button type="button" onclick="location.href='list.html'">리스트</button>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#temp').click(function() {
-                $('#append').val($('#test').html());
-            })
-        });
-    </script>
+    <script type="text/javascript" src="/js/write.js"></script>
 </body>
 </html>
