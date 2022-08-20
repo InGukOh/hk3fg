@@ -12,7 +12,6 @@
     <!-- HEADER -->
     <div th:insert="common/header.html" id="header"></div>
 
-    <h3 th:if="${Login_UID != 'anonymousUser'}">안녕하세요,<span th:text="${Login_UID}"></span>!!</h3>
     <hr>
 
     <sec:authorize access="denyAll()"></sec:authorize>
@@ -23,11 +22,11 @@
     <br>
     <hr>
     <div id="mainContent">
-
         <hr>
         <br>
-        <a th:href="@{/post}">글쓰기</a>
+        <a th:if="${Login_UID != 'anonymousUser'}" th:href="@{/post}">글쓰기</a>
 
+        <div th:fragment="fregment_list(page)">
         <table>
             <thead>
             <tr>
@@ -45,7 +44,7 @@
                     <span th:text="${board.id}"></span>
                 </td>
                 <td>
-                    <a th:href="@{'/post/' + ${board.id}}">
+                    <a th:href="@{'/post/' + ${board.id} + '/?page='+${pageNum}}">
                         <span th:text="${board.title}"></span>
                     </a>
                 </td>
@@ -59,20 +58,23 @@
             </tr>
             </tbody>
         </table>
+        </div>
 
         <div>
 
-
- <!--           <a th:if="${pageList} > 5" th:href="@{/?page=1}">-->
+            <a th:href="@{/list/?page=1}">
                 <span> << </span>
             </a>
-            <a th:href="@{'/?page=' + ${prevBlock}}"> < </a>
+            <a th:href="@{'/list/?page=' + ${prevBlock}}"> < </a>
 
             <span th:each="pageNum : ${pageList}" th:inline="text">
-                <a th:href="@{'/?page=' + ${pageNum}}">[[${pageNum}]]</a>
+                <a th:href="@{'/list/?page=' + ${pageNum}}">[[${pageNum}]]</a>
             </span>
 
-            <a th:href="@{'/?page=' + ${nextBlock}}"> > </a>
+            <a th:href="@{'/list/?page=' + ${nextBlock}}"> > </a>
+            <a th:href="@{'/list/?page=' + ${lastBlock}}">
+                <span> >> </span>
+            </a>
 
         </div>
 

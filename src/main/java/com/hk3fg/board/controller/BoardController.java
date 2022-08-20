@@ -72,8 +72,14 @@ public class BoardController {
 
     }
 
-    /* 게시글 목록 */
     @GetMapping("/")
+    public String index(){
+
+        return "/board/index";
+    }
+
+    /* 게시글 목록 */
+    @GetMapping("/list")
     public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
 
         String username = get_Uid();
@@ -82,13 +88,14 @@ public class BoardController {
         Integer[] pageList = boardService.getPageList(pageNum);
         Integer totalLastPageNum = boardService.totalLastPageNum();
 
+        logger.info("pl : " + Arrays.toString(pageList));
         model.addAttribute("boardList", boardList);
         model.addAttribute("pageList", pageList);
         model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
         model.addAttribute("nextBlock",(pageNum + 10 > totalLastPageNum)? totalLastPageNum : pageNum+10);
-
+        model.addAttribute("lastBlock",totalLastPageNum);
+        model.addAttribute("pageNum",pageNum);
         model.addAttribute("Login_UID",username);
-
 
         return "/board/list";
     }
@@ -96,12 +103,13 @@ public class BoardController {
 
     /* 게시글 상세 */
     @GetMapping("/post/{no}")
-    public String detail(@PathVariable("no") Long no, Model model) {
+    public String detail(@PathVariable("no") Long no, Model model,@RequestParam(value="page", defaultValue = "1") Integer pageNum) {
         String username = get_Uid();
         model.addAttribute("Login_UID",username);
         BoardDto boardDTO = boardService.getPost(no);
 
         model.addAttribute("boardDto", boardDTO);
+        model.addAttribute("pageNum", pageNum);
         return "board/detail";
     }
 

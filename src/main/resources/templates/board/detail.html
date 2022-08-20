@@ -10,27 +10,33 @@
 </head>
 <body>
 
-    <div id="main_content" class="center-block">
-        <th:block th:if="${Login_UID != 'anonymousUser'}">
+    <div th:insert="common/header.html" id="header"></div>
+
+    <div id="main_content">
+        <th:block th:if="${Login_UID != 'anonymousUser'} and ${Login_UID} == ${boardDto.writer}">
             <table name="btn_group_detail" id="btn_group_detail" class="table-bordered">
                 <tbody>
                     <tr id="tr_detail_option">
-                        <td id="Empty_Space_detail"></td>
+                        <!-- 수정 / 삭제-->
                         <td id="Writer_Option_Update">
-                            <!-- 수정 -->
                             <a th:href="@{'/post/edit/' + ${boardDto.id}}">
                                 <button>수정</button>
                             </a>
                         </td>
+                        <!-- 수정 -->
 
+                        <td id="Vertical_bar">
+                            <div id="Updown"></div>
+                        </td>
+
+                        <!-- 삭제 -->
                         <td id="Writer_Option_Delete">
-                            <!-- 삭제 -->
                             <form id="delete-form" th:action="@{'/post/' + ${boardDto.id}}" method="post">
                                 <input type="hidden" name="_method" value="delete"/>
                                 <button id="delete-btn">삭제</button>
                             </form>
-                            <!-- 삭제 -->
                         </td>
+                        <!-- 수정 / 삭제-->
                     </tr>
                 </tbody>
             </table>
@@ -40,20 +46,22 @@
             <tbody name="tbody_detail" id="tbody_detail">
 
                 <tr id="tr_detail_info">
-                    <td id="td_Title"> <p th:text="${boardDto.title}" class="text-left"></p> </td>
-                    <td id="td_Writer"> <p th:text="${boardDto.writer}"  class="text-center"></p> </td>
-                    <td id="td_Reporting_Date"> <p th:inline="text"  class="text-center">작성일 : [[${#temporals.format(boardDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</p> </td>
+                    <td id="td_Title"> <div id="div_Title"><span id="span_Title" th:text="${boardDto.title}" class="text-left"></span></div> </td>
+                    <td id="td_Writer"> <div id="div_Writer"> <span id="span_Writer" th:text="${boardDto.writer}"  class="text-center"></span></div> </td>
+                    <td id="td_Reporting_Date"> <div id="div_Rep_Date"><span id="span_Reporting_Date" th:inline="text"  class="text-center">[[${#temporals.format(boardDto.createdDate, 'yyyy-MM-dd HH:mm')}]]</span></div></td>
                 </tr>
 
                 <tr id="tr_detail_content">
                     <td id="td_Content" colspan="3">
-                        <div th:utext="${boardDto.content}"></div>
+                        <div th:utext="${boardDto.content}" id="View_Content"></div>
                     </td>
                 </tr>
 
                 <tr style="padding: 10px">
                     <td colspan="3">
-                        <button type="button" onclick="location.href='/'">리스트</button>
+                        <a th:href="@{'/list/?page=' + ${pageNum}}">
+                            <button>리스트</button>
+                        </a>
                     </td>
                 </tr>
 
@@ -61,7 +69,10 @@
         </table>
 
     </div>
-
+    <p th:text="${pageNum}"></p>
+    <div th:insert="~{board/list :: fregment_list(${pageNum})}"></div>
+    <!-- FOOTER -->
+    <div th:insert="common/footer.html" id="footer"></div>
 <!-- script -->
 <script th:inline="javascript" th:src="@{/js/board.js}"></script>
 </body>

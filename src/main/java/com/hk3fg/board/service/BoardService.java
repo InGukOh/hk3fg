@@ -50,6 +50,7 @@ public class BoardService {
 
     @Transactional
     public BoardDto getPost(Long id) {
+        logger.info("여기서불러옴2");
         Optional<BoardEntity> boardEntityWrapper = boardRepository.findById(id);
         BoardEntity boardEntity = boardEntityWrapper.get();
 
@@ -123,6 +124,7 @@ public class BoardService {
     }
 
     private BoardDto convertEntityToDto(BoardEntity boardEntity) {
+
         return BoardDto.builder()
                 .id(boardEntity.getId())
                 .title(boardEntity.getTitle())

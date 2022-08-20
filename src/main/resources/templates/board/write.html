@@ -8,36 +8,50 @@
     <link rel="stylesheet" th:href="@{/css/write.css}">
 </head>
 <body>
-    <p th:object="${member}"></p>
-    <form  action="/post" method="post" id="form_write" onsubmit="return false">
-        제목 : <input type="text" name="title" id="title"> <br>
-        <th:block th:if="${Login_UID != 'anonymousUser'}">
-            <input type="text" name="writer" id="writer_UID" hidden="hidden" th:value="${Login_UID}">
-        </th:block>
 
-        <th:block th:if="${Login_UID != 'anonymousUser'}">
+    <div th:insert="common/header.html" id="header"></div>
+
+    <div id="main_form_content">
+        <form  action="/post" method="post" id="form_write" onsubmit="return false">
+
+            <p>제목 : <input type="text" name="title" id="title"> </p>
             <p>작성자 : <span th:text="${Login_UID}"></span></p>
-        </th:block>
-      <!--   <input type="text" name="writer" hidden="hidden" th:if="${Login_UID != 'anonymousUser'}" th:value="${Login_UID}"> -->
+            <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_UID}">
 
-        <th:block th:if="${Login_UID == 'anonymousUser'}">
-            <input type="text" name="writer_anonymousUser" id="writer_anonymousUser" placeholder="작성자명">
-            <input type="text" name="anonymous_IP" id="anonymous_IP" th:value="${anonymous_IP}" hidden="hidden">
-            <input type="text" name="writer" id="writer" hidden="hidden">
-        </th:block>
+            <div contenteditable="true" id="input_div_content_editable" aria-placeholder="여기입력" style="overflow-y: scroll">
 
-        <div contenteditable="true" id="test" aria-placeholder="여기입력">
+            </div>
 
-        </div>
+            <textarea name="content" id="append" hidden="hidden"></textarea><br>
 
-        <textarea name="content" id="append" hidden="hidden"></textarea><br>
+            <button type="submit" id="btn_submit">등록</button>
+        </form>
+    </div>
 
-        <button type="submit" id="btn_submit">등록</button>
-    </form>
-    <button type="button" onclick="location.href='list.html'">리스트</button>
+    <button type="button" onclick="location.href='/'">리스트</button>
+
+    <div th:insert="common/footer.html" id="footer"></div>
+
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/js/write.js"></script>
+    <script th:inline="javascript" src="/js/write.js"></script>
+    <script type="text/javascript">
+        $("[contenteditable='true']").on("input", function () { //content editable 에 입력하는 내용 한줄한줄을 p요소로 반환
+                let editable = $(this);
+                if (editable.html().trim() === "" || editable.html().trim() === "<br>")
+                    editable.html($("<p><br></p>"));
+            })
+            .trigger("input");
+    </script>
+
+    <!--<script th:inline="javascript">
+
+        const Login_value = [[${Login_UID}]];
+
+        alert(Login_value);
+
+    </script>-->
+
 
 </body>
 </html>

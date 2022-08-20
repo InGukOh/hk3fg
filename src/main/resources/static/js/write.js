@@ -1,24 +1,18 @@
-/*$(document).ready(function() {*/
-/*document.write("<script type=”text/javascript” src=”http://jsgetip.appspot.com\"><"+"/script>");
-alert( ip() );*/
-    $('#btn_submit').click(function() {
-        const title_value = document.getElementById('title').value.trim();
-        const writer_anonymousUser_value = document.getElementById('writer_anonymousUser').value.trim();
-        const writer_anonymousUser_IP_value = document.getElementById('anonymous_IP').value.trim();
+     $('#btn_submit').click(function() {
+        const title_value = document.getElementById('title');
         const target_form = document.getElementById('form_write');
 
         if(title_value == ""){
             alert('제목을 입력해주세요');
-            $('title').focus();
+            title_value.focus();
             return false;
-        } else if(writer_anonymousUser_value == ""){
-            alert('작성자명을 입력해주세요');
-        } else if(writer_anonymousUser_value != ""){
-           $('#writer').val(writer_anonymousUser_value + "(" + writer_anonymousUser_IP_value + ")");
-
         }
 
-        $('#append').val($('#test').html());
+        $('#append').val($('#input_div_content_editable').html());
+        if($('#append').val($('#input_div_content_editable').html()).val()==""){
+            alert('내용이 입력되지 않았습니다.');
+            return false;
+        }
 
         target_form.submit();
 
