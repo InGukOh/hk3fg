@@ -5,22 +5,24 @@ alert( ip() );*/
         const title_value = document.getElementById('title').value.trim();
         const writer_anonymousUser_value = document.getElementById('writer_anonymousUser').value.trim();
         const writer_anonymousUser_IP_value = document.getElementById('anonymous_IP').value.trim();
-        alert(title_value);
-        alert(writer_anonymousUser_value + "(" + writer_anonymousUser_IP_value + ")");
+        const target_form = document.getElementById('form_write');
+
         if(title_value == ""){
             alert('제목을 입력해주세요');
             $('title').focus();
             return false;
         } else if(writer_anonymousUser_value == ""){
-            alert('작성자명을 입력해주세요')
+            alert('작성자명을 입력해주세요');
         } else if(writer_anonymousUser_value != ""){
-           $('#writer').val(writer_anonymousUser_value + "(" + writer_anonymousUser_IP_value + ")")
+           $('#writer').val(writer_anonymousUser_value + "(" + writer_anonymousUser_IP_value + ")");
+
         }
+
         $('#append').val($('#test').html());
+
+        target_form.submit();
+
     });
-    function form_submit(){
-        $('#append').val($('#test').html());
-        $("form_write").submit();
-    }
+
 /*
 });*/

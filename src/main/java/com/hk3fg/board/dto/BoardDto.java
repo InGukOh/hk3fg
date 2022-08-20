@@ -23,7 +23,7 @@ public class BoardDto {
 
     public BoardEntity toEntity(){
 
-        logger.info("BDTO 1 :여기서 작동");
+        logger.info("BoardDto : 글 저장 실행");
 
         BoardEntity boardEntity = BoardEntity.builder()
                 .id(id)
@@ -37,7 +37,7 @@ public class BoardDto {
     @Builder
     public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
 
-        logger.info("BDTO 2 :여기서 작동");
+        logger.info("BoardDto : "+ id +"번 글 성공적으로 불러옴");
 
         this.id = id;
         this.writer = writer;

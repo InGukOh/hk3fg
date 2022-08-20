@@ -31,7 +31,7 @@ public class BoardService {
 
     @Transactional
     public List<BoardDto> getBoardlist(Integer pageNum) {
-        Page<BoardEntity> page = boardRepository.findAll(PageRequest.of(pageNum - 1, PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC, "createdDate")));
+        Page<BoardEntity> page = boardRepository.findAll(PageRequest.of(pageNum-1, PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC, "createdDate")));
 
         List<BoardEntity> boardEntities = page.getContent();
         List<BoardDto> boardDtoList = new ArrayList<>();
@@ -81,37 +81,45 @@ public class BoardService {
     }
 
     public Integer[] getPageList(Integer curPageNum) {
-
+        //입력된 페이지 기록
         logger.info("CurPageNum : " + Integer.toString(curPageNum));
 
-        // 총 게시글 갯수
-        Double postsTotalCount = Double.valueOf(this.getBoardCount());
-
-        // 총 게시글 기준으로 계산한 마지막 페이지 번호 계산
-        Integer totalLastPageNum = (int)(Math.ceil((postsTotalCount/PAGE_POST_COUNT)));
-
-        Integer[] pageList = new Integer[BLOCK_PAGE_NUM_COUNT];
-
         // 현재 페이지를 기준으로 블럭의 마지막 페이지 번호 계산
-        Integer blockLastPageNum = (totalLastPageNum > curPageNum + BLOCK_PAGE_NUM_COUNT)
-                ? curPageNum + BLOCK_PAGE_NUM_COUNT
-                : totalLastPageNum;
+        Integer blockLastPageNum =
+                (totalLastPageNum() > curPageNum + BLOCK_PAGE_NUM_COUNT)?
+                        curPageNum + BLOCK_PAGE_NUM_COUNT : totalLastPageNum();
+        logger.info("BlockLastPageNum : " + blockLastPageNum);
 
-        logger.info("BLP : " + blockLastPageNum);
+        //입력된 페이지와 마지막 페이지 비교
+        if(curPageNum > blockLastPageNum) curPageNum = blockLastPageNum;
+        logger.info("curPageNum : " + curPageNum);
+
         // 페이지 시작 번호 조정
-        curPageNum = (curPageNum-5<=0)? 1:curPageNum-5;
-        Integer[] F_Page = new Integer[3];
-        Integer[] B_Page = new Integer[3];
+        curPageNum = (curPageNum-10<=0)? 1 : curPageNum-5;
 
         // 페이지 번호 할당
+        Integer[] pageList = new Integer[BLOCK_PAGE_NUM_COUNT];
         int calc = (curPageNum + 9 < blockLastPageNum)? curPageNum + 9 : blockLastPageNum;
         for (int val = curPageNum, idx = 0; val <= calc; val++, idx++) {
            pageList[idx] = val;
         }
-
-        logger.info("현재 페이지 "+curPageNum+" 전체 페이지 갯수 "+ totalLastPageNum+" pageList " + Arrays.toString(pageList));
+        logger.info("pageList " + Arrays.toString(pageList));
 
         return pageList;
+    }
+
+    public Integer totalLastPageNum(){
+
+        //총 게시글 갯수
+        Double postsTotalCount = Double.valueOf(this.getBoardCount());
+        logger.info("PostTotalCount : "+ postsTotalCount);
+
+
+        // 총 게시글 기준으로 계산한 마지막 페이지 번호 계산
+        Integer totalLastPageNum = (int)(Math.ceil((postsTotalCount/PAGE_POST_COUNT)));
+        logger.info("TotalLastPageNum : "+ totalLastPageNum);
+
+        return totalLastPageNum;
     }
 
     private BoardDto convertEntityToDto(BoardEntity boardEntity) {

@@ -37,7 +37,6 @@ public class BoardController {
         } else {
             username = principal.toString();
         }
-
         return username;
     }
     /*IP앞 두개 가져오기*/
@@ -81,22 +80,12 @@ public class BoardController {
 
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
         Integer[] pageList = boardService.getPageList(pageNum);
-
-        int max = 0;
-        for (int i = 0; i<10; i++){
-            if(pageList[i]==null){
-                break;
-            } else {
-                max = pageList[i];
-            }
-        }
-
-        logger.info("컨트롤러 리스트 : " + Arrays.toString(pageList) + " max : "+max);
+        Integer totalLastPageNum = boardService.totalLastPageNum();
 
         model.addAttribute("boardList", boardList);
         model.addAttribute("pageList", pageList);
         model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
-        model.addAttribute("nextBlock",(pageNum+10 >= 0)? max-pageNum : pageNum+10);
+        model.addAttribute("nextBlock",(pageNum + 10 > totalLastPageNum)? totalLastPageNum : pageNum+10);
 
         model.addAttribute("Login_UID",username);
 
@@ -108,6 +97,8 @@ public class BoardController {
     /* 게시글 상세 */
     @GetMapping("/post/{no}")
     public String detail(@PathVariable("no") Long no, Model model) {
+        String username = get_Uid();
+        model.addAttribute("Login_UID",username);
         BoardDto boardDTO = boardService.getPost(no);
 
         model.addAttribute("boardDto", boardDTO);
@@ -120,13 +111,13 @@ public class BoardController {
         logger.info("UC에서 들어감");
         model.addAttribute("member",new UserDto());
 
-
         return "/member/signUpForm";
     }
 
     @PostMapping("/member/signUp")
     public String signUp(UserDto userDto){
         loginService.signUp(userDto);
+
         return "redirect:/";
     }
 
@@ -135,7 +126,6 @@ public class BoardController {
 
         return "/member/loginForm";
     }
-
     //=====================회원관련==================
 
 

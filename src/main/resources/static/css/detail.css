@@ -1,0 +1,60 @@
+div#main_content{
+    border: 2px solid #000000;
+    margin: 30px 20px auto;
+}
+table#btn_group_detail{
+    float: right;
+    margin-right: 50px;
+}
+td#Empty_Space_detail{
+    width: 68%;
+}
+td#Writer_Option_Update{
+    width: 15%;
+}
+td#Writer_Option_Delete{
+    width: 15%;
+}
+td#td_Title{
+    border-right: 2px solid #5c636a;
+    width: 60%;
+}
+td#td_Writer{
+    border-left: 2px solid #5c636a;
+    width: 15%;
+}
+td#td_Writer p{
+    vertical-align: text-bottom;
+}
+td#td_Reporting_Date{
+    border-left: 2px solid #5c636a;
+    width: 24%;
+}
+td#td_Reporting_Date p {
+    vertical-align: text-bottom;
+}
+/*
+tr#tr_detail_info {
+    width: 100%;
+    border: 5px solid #00ff00;
+    margin: 5px auto;
+}
+td#td_Title{
+    border: 3px dot-dash #ff0000 !important;
+}
+td#td_Writer{
+    border: 3px dot-dash #00ff00 !important;
+}
+td#td_Reporting_Date{
+    border: 3px dot-dash #0000ff !important;
+}
+tr#tr_detail_content{
+    width: 100%;
+    border: 5px solid #0000ff;
+    margin: 5px auto;
+}
+tr#tr_detail_option{
+    width: 100%;
+    border: 5px solid #ffff00;
+    margin: 5px auto;
+}*/
