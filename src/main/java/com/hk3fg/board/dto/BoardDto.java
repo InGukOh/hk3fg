@@ -2,6 +2,8 @@ package com.hk3fg.board.dto;
 
 import com.hk3fg.board.domain.entity.BoardEntity;
 import lombok.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 
@@ -17,10 +19,12 @@ public class BoardDto {
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
-
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public BoardEntity toEntity(){
-        System.out.println("BDTO:여기서 작동1");
+
+        logger.info("BDTO 1 :여기서 작동");
+
         BoardEntity boardEntity = BoardEntity.builder()
                 .id(id)
                 .writer(writer)
@@ -32,7 +36,9 @@ public class BoardDto {
 
     @Builder
     public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
-        System.out.println("BDTO:여기서 작동2");
+
+        logger.info("BDTO 2 :여기서 작동");
+
         this.id = id;
         this.writer = writer;
         this.title = title;

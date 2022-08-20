@@ -3,7 +3,10 @@ package com.hk3fg.board.service;
 import com.hk3fg.board.dto.BoardDto;
 import com.hk3fg.board.domain.entity.BoardEntity;
 import com.hk3fg.board.domain.repository.BoardRepository;
+import jdk.internal.jline.internal.Log;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -22,6 +25,9 @@ public class BoardService {
 
     private static final int BLOCK_PAGE_NUM_COUNT = 10;  // 블럭에 존재하는 페이지 번호 수
     private static final int PAGE_POST_COUNT = 20;       // 한 페이지에 존재하는 게시글 수
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
     @Transactional
     public List<BoardDto> getBoardlist(Integer pageNum) {
@@ -75,8 +81,8 @@ public class BoardService {
     }
 
     public Integer[] getPageList(Integer curPageNum) {
-        System.out.println(Integer.toString(curPageNum));
 
+        logger.info("CurPageNum : " + Integer.toString(curPageNum));
 
         // 총 게시글 갯수
         Double postsTotalCount = Double.valueOf(this.getBoardCount());
@@ -91,8 +97,7 @@ public class BoardService {
                 ? curPageNum + BLOCK_PAGE_NUM_COUNT
                 : totalLastPageNum;
 
-        System.out.println("BLP : " + blockLastPageNum);
-
+        logger.info("BLP : " + blockLastPageNum);
         // 페이지 시작 번호 조정
         curPageNum = (curPageNum-5<=0)? 1:curPageNum-5;
         Integer[] F_Page = new Integer[3];
@@ -102,9 +107,9 @@ public class BoardService {
         int calc = (curPageNum + 9 < blockLastPageNum)? curPageNum + 9 : blockLastPageNum;
         for (int val = curPageNum, idx = 0; val <= calc; val++, idx++) {
            pageList[idx] = val;
-           System.out.println("idx : "+pageList[idx]);
         }
-        System.out.println("현재 페이지 "+curPageNum+" 전체 페이지 갯수 "+ totalLastPageNum+" pageList " + Arrays.toString(pageList));
+
+        logger.info("현재 페이지 "+curPageNum+" 전체 페이지 갯수 "+ totalLastPageNum+" pageList " + Arrays.toString(pageList));
 
         return pageList;
     }

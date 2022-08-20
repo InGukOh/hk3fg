@@ -6,13 +6,18 @@ import com.hk3fg.board.service.BoardService;
 import com.hk3fg.board.service.LoginService;
 import lombok.AllArgsConstructor;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
+
 
 @Controller
 @AllArgsConstructor
@@ -21,7 +26,9 @@ public class BoardController {
 
     private LoginService loginService;
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    /*uID 가져오기*/
     public String get_Uid(){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
@@ -32,6 +39,38 @@ public class BoardController {
         }
 
         return username;
+    }
+    /*IP앞 두개 가져오기*/
+    private String getIp(HttpServletRequest request) {
+
+        String ip = request.getHeader("X-Forwarded-For");
+        logger.info(">>>> X-FORWARDED-FOR : " + ip);
+
+        if (ip == null) {
+            ip = request.getHeader("Proxy-Client-IP");
+            logger.info(">>>> Proxy-Client-IP : " + ip);
+        }
+        if (ip == null) {
+            ip = request.getHeader("WL-Proxy-Client-IP"); // 웹로직
+            logger.info(">>>> WL-Proxy-Client-IP : " + ip);
+        }
+        if (ip == null) {
+            ip = request.getHeader("HTTP_CLIENT_IP");
+            logger.info(">>>> HTTP_CLIENT_IP : " + ip);
+        }
+        if (ip == null) {
+            ip = request.getHeader("HTTP_X_FORWARDED_FOR");
+            logger.info(">>>> HTTP_X_FORWARDED_FOR : " + ip);
+        }
+        if (ip == null) {
+            ip = request.getRemoteAddr();
+        }
+        String[] get_ip = ip.split("\\.");
+        String view_ip = get_ip[0]+"."+get_ip[1];
+        logger.info(">>>> Result : IP Address : "+view_ip);
+
+        return view_ip;
+
     }
 
     /* 게시글 목록 */
@@ -51,7 +90,8 @@ public class BoardController {
                 max = pageList[i];
             }
         }
-        System.out.println("컨트롤러 리스트 : " + Arrays.toString(pageList) + " max : "+max);
+
+        logger.info("컨트롤러 리스트 : " + Arrays.toString(pageList) + " max : "+max);
 
         model.addAttribute("boardList", boardList);
         model.addAttribute("pageList", pageList);
@@ -59,6 +99,7 @@ public class BoardController {
         model.addAttribute("nextBlock",(pageNum+10 >= 0)? max-pageNum : pageNum+10);
 
         model.addAttribute("Login_UID",username);
+
 
         return "/board/list";
     }
@@ -76,7 +117,7 @@ public class BoardController {
     //=====================회원관련==================
     @GetMapping("/member/signUp")
     public String signUpForm(Model model){
-        System.out.println("UC에서 들어감");
+        logger.info("UC에서 들어감");
         model.addAttribute("member",new UserDto());
 
 
@@ -100,16 +141,23 @@ public class BoardController {
 
     /* 게시글 쓰기 */
     @GetMapping("/post")
-    public String write(Model model) {
+    public String write(Model model,HttpServletRequest request) {
+        //////////////////////////ip가져오기///////////////////////////
+
+        String ip = getIp(request);
+
+        //////////////////////////ip가져오기///////////////////////////
         String username = get_Uid();
         model.addAttribute("Login_UID",username);
-        System.out.println("BC:여기서 작동-작성 / 정상적 반환");
+        model.addAttribute("anonymous_IP",ip);
+        logger.info("BC:여기서 작동-작성 / 정상적 반환");
         return "board/write";
     }
 
     @PostMapping("/post")
     public String write(BoardDto boardDto) {
-        System.out.println("BC:여기서 작동-저장");
+        logger.info("BC:여기서 작동-저장");
+
         boardService.savePost(boardDto);
 
         return "redirect:/";

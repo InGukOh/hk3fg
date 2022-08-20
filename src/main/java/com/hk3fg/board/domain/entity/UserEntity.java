@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
@@ -16,6 +18,7 @@ import java.time.LocalDateTime;
 
 @Table(name = "user_info")
 public class UserEntity  {
+
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -40,8 +43,10 @@ public class UserEntity  {
                       String uPW,
                       LocalDateTime join_date,
                       LocalDateTime cancel_date) {
-        System.out.println("UserEnt : 실행됨");
-        System.out.println("jd : " + join_date);
+
+        Logger logger = LoggerFactory.getLogger("com.hk3fg.board.domain.entity");
+        logger.info("UserEnt : 실행됨 " + "jd : " + join_date);
+
         this.uID_Num = uID_Num;
         this.uID = uID;
         this.uPW = uPW;
