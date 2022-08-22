@@ -28,8 +28,8 @@ public class BoardController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/")
-    public String index(){
-
+    public String MainPage(){
+        logger.info("BoardController : MainPage / Action : MainPage OPEN | Activate");
         return "/board/index";
     }
 
@@ -124,7 +124,7 @@ public class BoardController {
         boardService.savePost(boardDTO);
 
         logger.info("BoardController : update / Action : save Entity | end\n");
-        return "redirect:/";
+        return "redirect:/board/list";
     }
 
     /* 게시글 삭제 */

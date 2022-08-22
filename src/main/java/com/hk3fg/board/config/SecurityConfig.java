@@ -17,6 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 
 @Configuration
@@ -57,7 +58,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Bean
     public AuthenticationSuccessHandler successHandler() {
-        return new CustomLoginSuccessHandler("/defaultUrl");
+
+        return new CustomLoginSuccessHandler("/");
     }
 
     @Override
@@ -65,4 +67,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(loginService).passwordEncoder(passwordEncoder());
         logger.info("Security Action : 2");
     }
+
 }

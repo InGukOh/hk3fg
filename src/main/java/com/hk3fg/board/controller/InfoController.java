@@ -27,6 +27,7 @@ public class InfoController {
         } else {
             username = principal.toString();
         }
+        logger.info(">>>>> UID : "+username+" <<<<<");
         logger.info("|||||||| GETTING UID ||||||||");
         return username;
     }
