@@ -44,7 +44,7 @@
                         <span th:text="${board.id}"></span>
                     </td>
                     <td>
-                        <a th:href="@{'/post/' + ${board.id} + '/?page='}" onclick="pageNum()">
+                        <a th:href="@{'/post/' + ${board.id} + '/?page='+${pageNum}}" onclick="pageNum()">
                             <span th:text="${board.title}"></span>
                         </a>
                     </td>
