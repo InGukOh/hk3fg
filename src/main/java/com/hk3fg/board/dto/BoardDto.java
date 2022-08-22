@@ -23,7 +23,7 @@ public class BoardDto {
 
     public BoardEntity toEntity(){
 
-        logger.info("BoardDto : 글 저장 실행");
+        logger.info("BoardDto : toEntity / Action : saving Data(게시글) | start");
 
         BoardEntity boardEntity = BoardEntity.builder()
                 .id(id)
@@ -31,14 +31,14 @@ public class BoardDto {
                 .title(title)
                 .content(content)
                 .build();
+        logger.info("BoardDto : toEntity / Action : saving Data(게시글) | end\n");
+
         return boardEntity;
     }
 
     @Builder
     public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
-
-        logger.info("BoardDto : "+ id +"번 글 성공적으로 불러옴");
-
+        logger.info("BoardDto : BoardDto / Action : loading id : "+ id+" |");
         this.id = id;
         this.writer = writer;
         this.title = title;

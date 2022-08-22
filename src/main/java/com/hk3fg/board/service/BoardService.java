@@ -22,15 +22,14 @@ import java.util.Optional;
 @Service
 public class BoardService {
     private BoardRepository boardRepository;
-
     private static final int BLOCK_PAGE_NUM_COUNT = 10;  // 블럭에 존재하는 페이지 번호 수
     private static final int PAGE_POST_COUNT = 20;       // 한 페이지에 존재하는 게시글 수
-
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 
     @Transactional
     public List<BoardDto> getBoardlist(Integer pageNum) {
+        logger.info("BoardService : getBoardlist / Action : getting Entity | start");
         Page<BoardEntity> page = boardRepository.findAll(PageRequest.of(pageNum-1, PAGE_POST_COUNT, Sort.by(Sort.Direction.DESC, "createdDate")));
 
         List<BoardEntity> boardEntities = page.getContent();
@@ -39,36 +38,44 @@ public class BoardService {
         for (BoardEntity boardEntity : boardEntities) {
             boardDtoList.add(this.convertEntityToDto(boardEntity));
         }
-
+        logger.info("BoardService : getBoardlist / Action : getting Entity | end\n");
         return boardDtoList;
     }
 
     @Transactional
     public Long getBoardCount() {
+        logger.info("BoardService : getBoardCount / Action : getting Entity | Activate");
         return boardRepository.count();
+
     }
 
     @Transactional
     public BoardDto getPost(Long id) {
-        logger.info("여기서불러옴2");
+        logger.info("BoardService : getPost / Action : get Data(게시글) | start");
+
         Optional<BoardEntity> boardEntityWrapper = boardRepository.findById(id);
         BoardEntity boardEntity = boardEntityWrapper.get();
 
+        logger.info("BoardService : getPost / Action : get Data(게시글) | end\n");
         return this.convertEntityToDto(boardEntity);
     }
 
     @Transactional
     public Long savePost(BoardDto boardDto) {
+        logger.info("BoardService : savePost / Action : save Data(게시글) | Activate\n");
         return boardRepository.save(boardDto.toEntity()).getId();
     }
 
     @Transactional
     public void deletePost(Long id) {
+        logger.info("BoardService : deletePost / Action : delete Data(게시글) | Activate\n");
         boardRepository.deleteById(id);
     }
 
     @Transactional
     public List<BoardDto> searchPosts(String keyword) {
+        logger.info("BoardService : searchPosts / Action : search Data(게시글) | start");
+
         List<BoardEntity> boardEntities = boardRepository.findByTitleContaining(keyword);
         List<BoardDto> boardDtoList = new ArrayList<>();
 
@@ -77,12 +84,14 @@ public class BoardService {
         for (BoardEntity boardEntity : boardEntities) {
             boardDtoList.add(this.convertEntityToDto(boardEntity));
         }
-
+        logger.info("BoardService : searchPosts / Action : search Data(게시글) | end\n");
         return boardDtoList;
     }
 
     public Integer[] getPageList(Integer curPageNum) {
+        logger.info("BoardService : getPageList / Action : get Data(전체 게시글 갯수) & creating PageBlocks | start");
         //입력된 페이지 기록
+
         logger.info("CurPageNum : " + Integer.toString(curPageNum));
 
         // 현재 페이지를 기준으로 블럭의 마지막 페이지 번호 계산
@@ -106,11 +115,13 @@ public class BoardService {
         }
         logger.info("pageList " + Arrays.toString(pageList));
 
+        logger.info("BoardService : getPageList / Action : get Data & creating PageBlocks | end\n");
         return pageList;
     }
 
     public Integer totalLastPageNum(){
 
+        logger.info("BoardService : totalLastPageNum / Action : get Data(전체 게시글 갯수) & check LastPageNum | start");
         //총 게시글 갯수
         Double postsTotalCount = Double.valueOf(this.getBoardCount());
         logger.info("PostTotalCount : "+ postsTotalCount);
@@ -120,6 +131,7 @@ public class BoardService {
         Integer totalLastPageNum = (int)(Math.ceil((postsTotalCount/PAGE_POST_COUNT)));
         logger.info("TotalLastPageNum : "+ totalLastPageNum);
 
+        logger.info("BoardService : totalLastPageNum / Action : get Data(전체 게시글 갯수) & check LastPageNum | end\n");
         return totalLastPageNum;
     }
 

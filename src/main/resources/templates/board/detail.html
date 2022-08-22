@@ -57,7 +57,7 @@
                     </td>
                 </tr>
 
-                <tr style="padding: 10px">
+                <tr>
                     <td colspan="3">
                         <a th:href="@{'/list/?page=' + ${pageNum}}">
                             <button>리스트</button>
@@ -69,10 +69,14 @@
         </table>
 
     </div>
-    <p th:text="${pageNum}"></p>
-    <div th:insert="~{board/list :: fregment_list(${pageNum})}"></div>
+    <div id="list_from_detail">
+        <div th:insert="~{board/list :: fragment_list(${pageNum})}"></div>
+    </div>
+
+
     <!-- FOOTER -->
     <div th:insert="common/footer.html" id="footer"></div>
+
 <!-- script -->
 <script th:inline="javascript" th:src="@{/js/board.js}"></script>
 </body>

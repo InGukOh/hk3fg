@@ -14,80 +14,74 @@
 
     <hr>
 
-    <sec:authorize access="denyAll()"></sec:authorize>
+    <div id="account_option">
+        <a sec:authorize ="isAnonymous()" th:href="@{/member/login}" >로그인</a>
+        <a sec:authorize ="isAuthenticated()" th:href="@{/member/logout}" >로그아웃</a>
+        <a sec:authorize ="isAnonymous()" th:href="@{/member/signUp}">회원가입</a>
+    </div>
 
-    <a sec:authorize ="isAnonymous()" th:href="@{/member/login}" >로그인</a>
-    <a sec:authorize ="isAuthenticated()" th:href="@{/member/logout}" >로그아웃</a>
-    <a sec:authorize ="isAnonymous()" th:href="@{/member/signUp}">회원가입</a>
-    <br>
     <hr>
+
     <div id="mainContent">
         <hr>
         <br>
-        <a th:if="${Login_UID != 'anonymousUser'}" th:href="@{/post}">글쓰기</a>
+        <div id="fragment_list" th:fragment="fragment_list(page)">
+            <a th:if="${Login_UID != 'anonymousUser'}" th:href="@{/post}">글쓰기</a>
+            <table>
+                <thead>
+                <tr>
+                    <th class="one wide">번호</th>
+                    <th class="ten wide">글제목</th>
+                    <th class="two wide">작성자</th>
+                    <th class="three wide">작성일</th>
+                </tr>
+                </thead>
 
-        <div th:fragment="fregment_list(page)">
-        <table>
-            <thead>
-            <tr>
-                <th class="one wide">번호</th>
-                <th class="ten wide">글제목</th>
-                <th class="two wide">작성자</th>
-                <th class="three wide">작성일</th>
-            </tr>
-            </thead>
+                <tbody>
+                <!-- CONTENTS !-->
+                <tr th:each="board : ${boardList}">
+                    <td>
+                        <span th:text="${board.id}"></span>
+                    </td>
+                    <td>
+                        <a th:href="@{'/post/' + ${board.id} + '/?page='+${pageNum}}">
+                            <span th:text="${board.title}"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <span th:text="${board.writer}"></span>
+                    </td>
+                    <td>
+                        <span th:text="${#temporals.format(board.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
 
-            <tbody>
-            <!-- CONTENTS !-->
-            <tr th:each="board : ${boardList}">
-                <td>
-                    <span th:text="${board.id}"></span>
-                </td>
-                <td>
-                    <a th:href="@{'/post/' + ${board.id} + '/?page='+${pageNum}}">
-                        <span th:text="${board.title}"></span>
-                    </a>
-                </td>
-                <td>
-                    <span th:text="${board.writer}"></span>
-                </td>
-                <td>
-                    <span th:text="${#temporals.format(board.createdDate, 'yyyy-MM-dd HH:mm')}"></span>
-
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-
-        <div>
-
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             <a th:href="@{/list/?page=1}">
                 <span> << </span>
             </a>
             <a th:href="@{'/list/?page=' + ${prevBlock}}"> < </a>
-
             <span th:each="pageNum : ${pageList}" th:inline="text">
                 <a th:href="@{'/list/?page=' + ${pageNum}}">[[${pageNum}]]</a>
             </span>
-
             <a th:href="@{'/list/?page=' + ${nextBlock}}"> > </a>
             <a th:href="@{'/list/?page=' + ${lastBlock}}">
                 <span> >> </span>
             </a>
+        <!--</div>-->
+            <hr>
+            <!-- 검색 form -->
+            <form action="/board/search" method="GET">
+                <div>
+                    <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
+                </div>
 
+                <button>검색하기</button>
+            </form>
         </div>
-
-        <hr>
-        <!-- 검색 form -->
-        <form action="/board/search" method="GET">
-            <div>
-                <input name="keyword" type="text" placeholder="검색어를 입력해주세요">
-            </div>
-
-            <button>검색하기</button>
-        </form>
     </div>
+
     <!-- FOOTER -->
     <div th:insert="common/footer.html" id="footer"></div>
 </body>

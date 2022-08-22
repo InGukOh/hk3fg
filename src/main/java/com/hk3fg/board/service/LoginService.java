@@ -5,6 +5,8 @@ import com.hk3fg.board.domain.repository.UserRepository;
 import com.hk3fg.board.dto.UserDto;
 
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -24,31 +26,35 @@ import java.util.Optional;
 public class LoginService implements UserDetailsService {
 
     private UserRepository userRepository;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     //회원가입
     @Transactional
     public Long signUp(UserDto userDto) {
+        logger.info("LoginService : signUp / Action : Add UserDATA to DB | start");
+
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         userDto.setUPW(passwordEncoder.encode(userDto.getUPW()));
 
-        System.out.println("LS : 들어감");
+        logger.info("LoginService : signUp / Action : Add UserDATA to DB | end\n");
         return userRepository.save(userDto.userEntity()).getUID_Num();
     }
     @Override
     public UserDetails loadUserByUsername(String uID) throws UsernameNotFoundException {
+        logger.info("LoginService : loadUserByUsername / Action : get UserDATA from DB | start");
+
         Optional<UserEntity> userEntityWrapper = userRepository.findByUID(uID);
-        System.out.println("LS2 : 들어감");
         UserEntity userEntity = userEntityWrapper.get();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
-
-
 
         if("admin".equals(uID)){
             authorities.add(new SimpleGrantedAuthority(Role.ADMIN.getValue()));
         } else {
             authorities.add(new SimpleGrantedAuthority(Role.MEMBER.getValue()));
         }
+
+        logger.info("LoginService : loadUserByUsername / Action : get UserDATA from DB | end\n");
         return new User(userEntity.getUID(), userEntity.getUPW(), authorities);
     }
 

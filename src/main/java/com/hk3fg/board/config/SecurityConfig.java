@@ -1,9 +1,11 @@
 package com.hk3fg.board.config;
 
 import com.hk3fg.board.service.LoginService;
-import jdk.internal.vm.compiler.collections.EconomicMap;
+
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,13 +15,17 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
 
 @Configuration
 @EnableWebSecurity
 @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private LoginService loginService;
+
+    private static Logger logger = LoggerFactory.getLogger(SecurityConfig.class);
 
     @Bean
     public PasswordEncoder passwordEncoder(){
@@ -38,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .formLogin()
                 .loginPage("/member/login")
-                .defaultSuccessUrl("/")
+                .successHandler(successHandler()) // 로그인 후 이전 페이지로 이동
                 .permitAll()
                 .and()
             .logout()
@@ -47,13 +53,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .and()
                 .exceptionHandling();
-        //http.cors().and();
-       // http.csrf().disable();
-        System.out.println("SC1:실행됨");
+        logger.info("Security Action : 1");
     }
+    @Bean
+    public AuthenticationSuccessHandler successHandler() {
+        return new CustomLoginSuccessHandler("/defaultUrl");
+    }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth)throws Exception {
         auth.userDetailsService(loginService).passwordEncoder(passwordEncoder());
-        System.out.println("SC2:실행됨");
+        logger.info("Security Action : 2");
     }
 }
