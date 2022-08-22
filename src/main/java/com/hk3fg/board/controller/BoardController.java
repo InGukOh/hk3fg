@@ -137,7 +137,7 @@ public class BoardController {
         logger.info("BoardController : delete / Action : delete Entity | end\n");
         return "board/list";
     }
-
+    /* 게시글 검색 */
     @GetMapping("/board/search")
     public String search(@RequestParam(value="keyword") String keyword, Model model) {
         logger.info("BoardController : search / Action : search Entity | start");

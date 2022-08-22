@@ -1,7 +1,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
 
-<link rel="stylesheet" th:href="@{/css/header.css}">
+<link rel="stylesheet" th:href="@{/static/css/header.css}">
 
 <h1 id="header_Text">헤더 입니다.</h1>
 <h3 th:if="${Login_UID != 'anonymousUser'}">안녕하세요,<span th:text="${Login_UID}"></span>!!</h3>

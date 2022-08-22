@@ -24,7 +24,7 @@ div#MyCharacter{
     box-sizing: border-box;
     position: absolute;
     left: 0;
-    background: #00ffff;
+    /*background: #00ffff;*/
 }
 div#player_Character{
     border:1px solid #000000;
@@ -66,7 +66,7 @@ div#Enemy{
     box-sizing: border-box;
     position: absolute;
     right: 0;
-    background: #ffff00;
+    /*background: #ffff00;*/
 }
 div#Enemy_Character{
     border:1px solid #000000;
