@@ -13,12 +13,12 @@ public class GameController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @GetMapping("/game")
+    @GetMapping("/game_BungterMelon")
     public String GamePage(Model model){
         logger.info("GameController : GamePage / Action : GamePage OPEN | Activate");
         String username = InfoController.get_Uid();
         model.addAttribute("Login_UID", username);
         if (username.equals("anonymousUser")) return "/member/loginForm";
-        return "/game/game";
+        return "/game/game_BungterMelon";
     }
 }
