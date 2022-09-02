@@ -4,12 +4,13 @@ import com.hk3fg.board.domain.repository.GameRepository;
 
 import com.hk3fg.board.dto.GameDto;
 
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-
+@AllArgsConstructor
 @Service
 public class GameService {
 
@@ -20,7 +21,7 @@ public class GameService {
     public Long saveScore(GameDto gameDto) {
         logger.info("GameService : saveScore / Action : save Data(게임점수) | Activate\n");
 
-        return gameRepository.save(gameDto.toEntity()).getUID_Num();
+        return gameRepository.save(gameDto.toEntity()).getPlayer_Num();
     }
 
 }

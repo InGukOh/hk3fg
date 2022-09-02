@@ -3,7 +3,7 @@ package com.hk3fg.board.controller;
 import com.hk3fg.board.dto.BoardDto;
 
 import com.hk3fg.board.service.BoardService;
-import com.hk3fg.board.service.LoginService;
+
 import lombok.AllArgsConstructor;
 
 import org.slf4j.LoggerFactory;
@@ -116,13 +116,14 @@ public class BoardController {
     }
 
     @PutMapping("/post/edit/{no}")
+    /*@RequestMapping(value="/post/edit/{no}", method = {RequestMethod.GET})*/
     public String update(BoardDto boardDTO) {
         logger.info("BoardController : update / Action : save Entity | start");
 
         boardService.savePost(boardDTO);
 
         logger.info("BoardController : update / Action : save Entity | end\n");
-        return "redirect:/board/list";
+        return "redirect:/list/?page=1";
     }
 
     /* 게시글 삭제 */

@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
 
@@ -11,6 +13,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @Table(name = "board")
+
 public class BoardEntity extends TimeEntity {
 
     @Id
@@ -29,6 +32,8 @@ public class BoardEntity extends TimeEntity {
 
     @Builder
     public BoardEntity(Long id, String title, String content, String writer) {
+        Logger logger = LoggerFactory.getLogger("com.hk3fg.board.domain.entity");
+        logger.info("id : " + id + " wri : " + writer + " tt : " + title + " cont : "+ content);
         this.id = id;
         this.writer = writer;
         this.title = title;

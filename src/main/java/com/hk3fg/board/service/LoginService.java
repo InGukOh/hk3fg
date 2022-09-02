@@ -1,8 +1,8 @@
 package com.hk3fg.board.service;
 
+import com.hk3fg.board.dto.UserDto;
 import com.hk3fg.board.domain.entity.UserEntity;
 import com.hk3fg.board.domain.repository.UserRepository;
-import com.hk3fg.board.dto.UserDto;
 
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
@@ -56,6 +56,22 @@ public class LoginService implements UserDetailsService {
 
         logger.info("LoginService : loadUserByUsername / Action : get UserDATA from DB | end\n");
         return new User(userEntity.getUID(), userEntity.getUPW(), authorities);
+    }
+    @Transactional
+    public UserDto getUserInfo(String uID){
+
+        Optional<UserEntity> userEntityWrapper = userRepository.findByUID(uID);
+        UserEntity userEntity = userEntityWrapper.get();
+
+        return this.convertEntityToDto(userEntity);
+    }
+
+    private UserDto convertEntityToDto(UserEntity userEntity) {
+
+        return UserDto.builder()
+                .uID_Num(userEntity.getUID_Num())
+                .uID(userEntity.getUID())
+                .build();
     }
 
 

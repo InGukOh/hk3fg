@@ -12,10 +12,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_game_info")
 public class GameEntity {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long uID_Num;
+    @Column(nullable = false)
+    private Long player_Num ;
 
+    @Id
     @Column(length = 10, nullable = false)
     private String uID;
 
@@ -23,8 +23,8 @@ public class GameEntity {
     private int gameScore;
 
     @Builder
-    public GameEntity(Long uID_Num, String uID, int gameScore) {
-        this.uID_Num = uID_Num;
+    public GameEntity(Long player_Num , String uID, int gameScore) {
+        this.player_Num  = player_Num ;
         this.uID = uID;
         this.gameScore = gameScore;
     }

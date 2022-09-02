@@ -83,11 +83,12 @@
         </div>-->
     </div>
 
-    <div id="game_score">
-        <form action="/post_gameScore" method="post" name="post_gameScore" id="post_gameScore" ><!--onsubmit="return false"-->
-            <input type="text" id="get_score" th:value=0>
-            <input type="text" id="uID" th:value="${Login_UID}">
-            <button type="submit" id="btn_submit">게임 점수 등록</button>
+    <div id="input_gameScore">
+        <form action="/game_BungterMelon" method="post" name="post_gameScore" id="post_gameScore" ><!--onsubmit="return false"-->
+            <input type="text" id="player_Num" name="player_Num" th:value="${uID_Info.getUID_Num()}">
+            <input type="text" id="gameScore" name="gameScore" th:value=0>
+            <input type="text" id="uID" name="uID" th:value="${Login_UID}">
+            <button type="submit" id="btn_submit" onclick="log()">게임 점수 등록</button>
         </form>
 
     </div>
@@ -99,9 +100,15 @@
     <!-- FOOTER -->
     <div th:insert="common/footer.html" id="footer"></div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="text/javascript">
 
-        var input_score = document.getElementById("get_score");
+    <script th:inline="javascript">
+        function log(){
+            console.log(document.getElementById("uID").value);
+        }
+    </script>
+
+    <script type="text/javascript">
+        var input_score = document.getElementById("gameScore");
 
         window.addEventListener('message', function(e) {
             console.log('메세지 받음');

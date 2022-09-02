@@ -31,6 +31,7 @@ public class BoardDto {
                 .title(title)
                 .content(content)
                 .build();
+        logger.info("id : " + id + " wri : " + writer + " tt : " + title + " cont : "+ content);
         logger.info("BoardDto : toEntity / Action : saving Data(게시글) | end\n");
 
         return boardEntity;

@@ -13,6 +13,19 @@ spring:
       format_sql: true
       ddl-auto: update
 
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+  thymeleaf:
+    cache: true
 logging:
   level:
     org:
