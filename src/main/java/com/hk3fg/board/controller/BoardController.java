@@ -23,8 +23,6 @@ import java.util.*;
 public class BoardController {
     private BoardService boardService;
 
-    private LoginService loginService;
-
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/")
@@ -100,7 +98,7 @@ public class BoardController {
 
         logger.info("BoardController : write / Action : post SAVE | end\n");
 
-        return "/board/list";
+        return "redirect:/list/?page=1";
     }
 
 

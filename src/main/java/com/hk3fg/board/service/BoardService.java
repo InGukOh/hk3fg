@@ -3,7 +3,7 @@ package com.hk3fg.board.service;
 import com.hk3fg.board.dto.BoardDto;
 import com.hk3fg.board.domain.entity.BoardEntity;
 import com.hk3fg.board.domain.repository.BoardRepository;
-import jdk.internal.jline.internal.Log;
+
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

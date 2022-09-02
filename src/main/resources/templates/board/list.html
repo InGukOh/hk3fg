@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<script src="../../../../../../../Downloads/daxigua-master/cocos2d-js-min.js"></script>
 <html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
@@ -17,7 +16,7 @@
 
     <div id="btn_location">
         <button type="button" onclick="location.href='/'">메인페이지</button>
-        <button type="button" onclick="location.href='/game'">게임</button>
+        <button type="button" onclick="location.href='/game_BungterMelon'">게임</button>
     </div>
     <div id="account_option">
         <a sec:authorize ="isAnonymous()" th:href="@{/member/login}" >로그인</a>

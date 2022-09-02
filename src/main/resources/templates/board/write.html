@@ -12,7 +12,7 @@
     <div th:insert="common/header.html" id="header"></div>
 
     <div id="main_form_content">
-        <form  action="/post" method="post" id="form_write" onsubmit="return false">
+        <form  action="/post" method="post" id="form_write" ><!--onsubmit="return false"-->
 
             <p>제목 : <input type="text" name="title" id="title"> </p>
             <p>작성자 : <span th:text="${Login_UID}"></span></p>
@@ -28,7 +28,7 @@
         </form>
     </div>
 
-    <button type="button" onclick="location.href='/'">리스트</button>
+    <button type="button" onclick="location.href='/list'">리스트</button>
 
     <div th:insert="common/footer.html" id="footer"></div>
 
