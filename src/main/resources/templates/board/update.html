@@ -10,23 +10,27 @@
 </head>
 <body>
 
-<div th:insert="common/header.html" id="header"></div>
-<form th:action="@{'/post/edit/' + ${boardDto.id}}" method="post">
-    <input type="hidden" name="_method" value="put"/>
-    <input type="hidden" name="id" th:value="${boardDto.id}"/>
+    <div th:insert="common/header.html" id="header"></div>
+        <form th:action="@{'/post/edit/' + ${boardDto.id}}" method="post">
+            <input type="hidden" name="_method" value="put"/>
+            <input type="hidden" name="id" th:value="${boardDto.id}"/>
 
-    <p>제목 : <input type="text" name="title"  th:value="${boardDto.title}"> </p>
-    <p>작성자 : <span th:text="${Login_UID}"></span></p>
-    <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_UID}">
+            <p>제목 : <input type="text" name="title"  th:value="${boardDto.title}"> </p>
+            <p>작성자 : <span th:text="${Login_UID}"></span></p>
+            <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_UID}">
 
-    <div contenteditable="true" id="input_div_content_editable" aria-placeholder="여기입력" style="overflow-y: scroll">
+            <div contenteditable="true" id="input_div_content_editable" aria-placeholder="여기입력" style="overflow-y: scroll">
 
-    </div>
-    <textarea name="content" th:text="${boardDto.content}"></textarea><br>
+            </div>
 
-    <button type="submit" id="btn_submit_update">수정</button>
+            <textarea name="content" th:text="${boardDto.content}"></textarea><br>
 
+            <textarea name="content" id="append" hidden="hidden"></textarea><br>
+
+            <button type="submit" id="btn_submit_update">수정</button>
+
+
+        </form>
     <div th:insert="common/footer.html" id="footer"></div>
-</form>
 </body>
 </html>
