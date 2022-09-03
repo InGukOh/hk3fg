@@ -2,6 +2,8 @@ div#input_div_content_editable {
     border: #000000 3px solid;
     border-radius: 3px;
     margin: 20px;
+    min-height: 600px;
+    max-height: 601px;
 }
 div#main_form_content {
     border:1px solid #000000;

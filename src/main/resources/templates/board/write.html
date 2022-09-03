@@ -28,7 +28,13 @@
         </form>
     </div>
 
-    <button type="button" onclick="location.href='/list'">리스트</button>
+    <a th:href="@{'/list/?page=1'}">
+        <button>리스트</button>
+    </a>
+
+    <div id="list_from_detail">
+        <div th:insert="~{board/list :: fragment_list(${pageNum})}"></div>
+    </div>
 
     <div th:insert="common/footer.html" id="footer"></div>
 

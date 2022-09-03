@@ -83,6 +83,9 @@ public class BoardController {
         //////////////////////////ip가져오기///////////////////////////
         String username = InfoController.get_Uid();
 
+        list(model,1);
+        model.addAttribute("pageNum", 1);
+
         model.addAttribute("Login_UID",username);
         model.addAttribute("anonymous_IP",ip);
 
@@ -107,10 +110,16 @@ public class BoardController {
     public String edit(@PathVariable("no") Long no, Model model) {
         logger.info("BoardController : edit / Action : getting Entity & insert Entity | start");
         BoardDto boardDTO = boardService.getPost(no);
+
         String username = InfoController.get_Uid();
+
+        list(model,1);
+
+        model.addAttribute("pageNum", 1);
 
         model.addAttribute("Login_UID",username);
         model.addAttribute("boardDto", boardDTO);
+
         logger.info("BoardController : edit / Action : getting Entity & insert Entity | end\n");
         return "board/update";
     }
