@@ -1,3 +1,7 @@
+body{
+    padding: 0px 30px;
+    min-width: 1280px;
+}
 div#main_content{
     border: 2px solid #000000;
     margin: 30px auto;
@@ -75,28 +79,51 @@ span#span_Reporting_Date{
 div#View_Content{
     padding: 20px;
 }
-/*
-tr#tr_detail_info {
-    width: 100%;
-    border: 5px solid #00ff00;
+
+/*!!!!!!!!댓글 관련!!!!!!!!*/
+#div_comment{
+    margin: 5px auto;
+    /*border:2px solid #ff0000;*/
+    max-width: 80%;
+}
+/*#div_write_comment */
+#div_write_comment{
+    /*border: 1px solid #00ff00;*/
     margin: 5px auto;
 }
-td#td_Title{
-    border: 3px dot-dash #ff0000 !important;
+#input_comment {
+    width: 90%;
+    min-height: 120px;
 }
-td#td_Writer{
-    border: 3px dot-dash #00ff00 !important;
-}
-td#td_Reporting_Date{
-    border: 3px dot-dash #0000ff !important;
-}
-tr#tr_detail_content{
-    width: 100%;
-    border: 5px solid #0000ff;
+/*#div_write_comment */
+
+#div_view_comment{
+    /*border: 1px solid #0000ff;*/
     margin: 5px auto;
+    padding: 10px;
 }
-tr#tr_detail_option{
-    width: 100%;
-    border: 5px solid #ffff00;
-    margin: 5px auto;
-}*/
+#comment_info{
+    display: flex;
+}
+#comment_writer{
+    margin-left: 20px;
+    /*border: 1px solid #ff0000;*/
+
+}
+#comment_date{
+    margin-left: 50%;
+   /*border: 1px solid #00ff00;*/
+}
+#comment_option{
+    margin-left: 2%;
+    /*border: 1px solid #0000ff;*/
+    display: flex;
+}
+
+/*!!!!!!!!댓글 관련!!!!!!!!*/
+
+#list_from_detail{
+    border:2px solid #ffff00;
+    margin-left: 20px;
+    margin-right: 20%;
+}

@@ -56,14 +56,20 @@ public class BoardController {
 
     /* 게시글 상세 */
     @GetMapping("/post/{no}")
-    public String detail(@PathVariable("no") Long no, Model model,@RequestParam(value="page", defaultValue = "1") Integer pageNum) {
+    public String detail(Model model,
+                         HttpServletRequest request,
+                         @PathVariable("no") Long no,
+                         @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
         logger.info("BoardController : detail / Action : get Data(게시글) & get UID | start");
 
         String username = InfoController.get_Uid();
-        list(model,pageNum);
-        model.addAttribute("Login_UID",username);
+        String ip = InfoController.getIp(request);
         BoardDto boardDTO = boardService.getPost(no);
 
+        list(model,pageNum);
+
+        model.addAttribute("Login_UID",username);
+        model.addAttribute("anonymous_IP",ip);
         model.addAttribute("boardDto", boardDTO);
         model.addAttribute("pageNum", pageNum);
 
@@ -157,4 +163,25 @@ public class BoardController {
         logger.info("BoardController : search / Action : search Entity | end\n");
         return "board/list";
     }
+    @GetMapping("/coment")
+    public String coment(Model model,HttpServletRequest request) {
+        logger.info("BoardController : write / Action : post OPEN | start");
+        //////////////////////////ip가져오기///////////////////////////
+
+        String ip = InfoController.getIp(request);
+
+        //////////////////////////ip가져오기///////////////////////////
+        String username = InfoController.get_Uid();
+
+        list(model,1);
+        model.addAttribute("pageNum", 1);
+
+        model.addAttribute("Login_UID",username);
+        model.addAttribute("anonymous_IP",ip);
+
+        logger.info("BoardController : write / Action : post OPEN | end\n");
+        return "board/write";
+    }
+
+
 }

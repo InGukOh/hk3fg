@@ -31,7 +31,7 @@
         <br>
         <div id="fragment_list" th:fragment="fragment_list(page)">
             <a th:if="${Login_UID != 'anonymousUser'}" th:href="@{/post}">글쓰기</a>
-            <table>
+            <table id="table_list">
                 <thead>
                 <tr>
                     <th class="one wide">번호</th>

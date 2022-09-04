@@ -1,11 +1,13 @@
 div#mainContent{
     padding: 0px 30px;
 }
-table {
+table#table_list {
     text-align: center;
     border-collapse: collapse;
 }
 
-table, th, td {
+table#table_list,
+table#table_list > th,
+table#table_list > tr , td {
     border: 1px solid black;
 }
