@@ -81,7 +81,7 @@
 
                     <input type="text" name="comment" id="comment">
                     <input type="number"
-                           name="content_num"
+                           name="contentNum"
                            id="content_num"
                            th:value="${boardDto.id}">
                     <input type="text" name="writer" id="writer"
@@ -91,11 +91,11 @@
                 </form>
             </div>
 
-            <div id="div_view_comment">
-                <div id="comment_info">
+            <div id="div_view_comment" th:each="comment : ${commentList}">
+                <div id="comment_info" >
 
-                    <div id="comment_writer"><span>작성자</span></div>
-                    <div id="comment_date"><span>yyyy-MM-dd HH:mm</span></div>
+                    <div id="comment_writer"><span th:text="${comment.writer}"></span></div>
+                    <div id="comment_date"><span th:text="${#temporals.format(comment.modifiedDate,'yyyy-MM-dd HH:mm')}"></span></div>
                     <div id="comment_option">
                         <button type="button">수정</button>
                         <button type="button">삭제</button>
@@ -103,7 +103,7 @@
 
                 </div>
                 <div id="view_comment" contenteditable="false">
-                    댓글작성ㅇㅇㅇㅇㅇㅇㅇㅇ
+                    <span th:text="${comment.comment}"></span>
                 </div>
             </div>
         </div>

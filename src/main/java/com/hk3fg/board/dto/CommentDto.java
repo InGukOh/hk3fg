@@ -15,8 +15,7 @@ public class CommentDto {
     private Long comment_id;
     private String writer;
     private String comment;
-
-    private int content_num;
+    private Long contentNum;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
@@ -30,7 +29,7 @@ public class CommentDto {
                 .comment_id(comment_id)
                 .writer(writer)
                 .comment(comment)
-                .content_num(content_num)
+                .contentNum(contentNum)
                 .build();
         logger.info("comment_id : " + comment_id + " write : " + writer +  " comment : "+ comment);
         logger.info("CommentDto : toEntity / Action : saving Data(댓글) | end\n");
@@ -42,14 +41,14 @@ public class CommentDto {
     public CommentDto(Long comment_id,
                       String writer,
                       String comment,
-                      int content_num,
+                      Long contentNum,
                       LocalDateTime createdDate,
                       LocalDateTime modifiedDate) {
         logger.info("CommentEntity : CommentDto / Action : loading comment_id : "+ comment_id+" |");
         this.comment_id = comment_id;
         this.writer = writer;
         this.comment = comment;
-        this.content_num = content_num;
+        this.contentNum = contentNum;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
     }

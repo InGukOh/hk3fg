@@ -35,11 +35,12 @@ public class BoardController {
     @GetMapping("/list")
     public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
         logger.info("BoardController : list / Action : list OPEN | start");
+        String Method_Name = "list";
         String username = InfoController.get_Uid();
 
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
-        Integer[] pageList = boardService.getPageList(pageNum);
-        Integer totalLastPageNum = boardService.totalLastPageNum();
+        Integer[] pageList = boardService.getPageList(pageNum,Method_Name,"");
+        Integer totalLastPageNum = boardService.totalLastPageNum(Method_Name,"");
 
         model.addAttribute("boardList", boardList);
         model.addAttribute("pageList", pageList);
@@ -58,13 +59,14 @@ public class BoardController {
     @GetMapping("/post/{no}")
     public String detail(Model model,
                          HttpServletRequest request,
-                         @PathVariable("no") Long no,
+                         @PathVariable("no") Long id,
                          @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
         logger.info("BoardController : detail / Action : get Data(게시글) & get UID | start");
 
         String username = InfoController.get_Uid();
         String ip = InfoController.getIp(request);
-        BoardDto boardDTO = boardService.getPost(no);
+        BoardDto boardDTO = boardService.getPost(id);
+        List<CommentDto> commentList = boardService.getPost_Comment(id);
 
         list(model,pageNum);
 
@@ -72,6 +74,7 @@ public class BoardController {
         model.addAttribute("anonymous_IP",ip);
         model.addAttribute("boardDto", boardDTO);
         model.addAttribute("pageNum", pageNum);
+        model.addAttribute("commentList",commentList);
 
         logger.info("BoardController : detail / Action : get Data(게시글) & get UID | end\n");
         return "board/detail";
@@ -155,12 +158,21 @@ public class BoardController {
     }
     /* 게시글 검색 */
     @GetMapping("/board/search")
-    public String search(@RequestParam(value="keyword") String keyword, Model model) {
+    public String search(@RequestParam(value="keyword") String keyword, @RequestParam(value="page", defaultValue = "1") Integer pageNum, Model model) {
         logger.info("BoardController : search / Action : search Entity | start");
-
+        String Method_Name = "search";
         List<BoardDto> boardDtoList = boardService.searchPosts(keyword);
+        /*String username = InfoController.get_Uid();*/
+        Integer[] pageList = boardService.getPageList(pageNum,Method_Name,keyword);
+        Integer totalLastPageNum = boardService.totalLastPageNum(Method_Name,keyword);
+
 
         model.addAttribute("boardList", boardDtoList);
+        model.addAttribute("pageList", pageList);
+        model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
+        model.addAttribute("nextBlock",(pageNum + 10 > totalLastPageNum)? totalLastPageNum : pageNum+10);
+        model.addAttribute("lastBlock",totalLastPageNum);
+        model.addAttribute("pageNum",pageNum);
 
         logger.info("BoardController : search / Action : search Entity | end\n");
         return "board/list";
@@ -168,14 +180,19 @@ public class BoardController {
 
     /* !!!!!!!!!!! 댓글 기능 관련 !!!!!!!!!!! */
     @PostMapping("/post_comment")
-    public String comment(CommentDto commentDto) {
+    public String comment(CommentDto commentDto,HttpServletRequest request) {
         logger.info("BoardController : comment / Action : post_comment SAVE | start");
 
         boardService.savePost_Comment(commentDto);
 
         logger.info("BoardController : comment / Action : post_comment SAVE | end\n");
+        String referer = request.getHeader("Referer");
+        int index = referer.indexOf("post");
+        referer = referer.substring(index,referer.length());
 
-        return "redirect:/list/?page=1";
+        logger.info(("REFERER : " + referer));
+
+        return "redirect:/"+referer;
     }
 
 

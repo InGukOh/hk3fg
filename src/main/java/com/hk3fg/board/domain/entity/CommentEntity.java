@@ -27,19 +27,17 @@ public class CommentEntity extends TimeEntity {
     private String comment;
 
     @Column(length = 9,nullable = false)
-    private int content_num;
-
-
+    private Long contentNum;
 
     @Builder
-    public CommentEntity(Long comment_id,int content_num, String writer, String comment) {
+    public CommentEntity(Long comment_id,Long contentNum, String writer, String comment) {
         Logger logger = LoggerFactory.getLogger("com.hk3fg.board.domain.entity");
         logger.info("comment_id : " + comment_id
-                +" content_num : " + content_num
+                +" content_num : " + contentNum
                 + " writer : " + writer
                 + " comment : "+ comment);
         this.comment_id = comment_id;
-        this.content_num = content_num;
+        this.contentNum = contentNum;
         this.writer = writer;
         this.comment = comment;
     }
