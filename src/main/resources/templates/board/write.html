@@ -18,23 +18,19 @@
             <p>작성자 : <span th:text="${Login_UID}"></span></p>
             <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_UID}">
 
-            <div contenteditable="true" id="input_div_content_editable" aria-placeholder="여기입력" style="overflow-y: scroll">
+            <div contenteditable="true" id="input_div_content_editable" aria-placeholder="여기입력" style="overflow-y: scroll; padding: 12px">
 
             </div>
 
             <textarea name="content" id="append" hidden="hidden"></textarea><br>
 
-            <button type="submit" id="btn_submit">등록</button>
+            <button type="button" id="btn_submit">등록</button>
         </form>
     </div>
 
     <a th:href="@{'/list/?page=1'}">
         <button>리스트</button>
     </a>
-
-    <div id="list_from_detail">
-        <div th:insert="~{board/list :: fragment_list(${pageNum})}"></div>
-    </div>
 
     <div th:insert="common/footer.html" id="footer"></div>
 

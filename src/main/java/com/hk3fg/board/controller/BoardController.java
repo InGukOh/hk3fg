@@ -1,7 +1,7 @@
 package com.hk3fg.board.controller;
 
 import com.hk3fg.board.dto.BoardDto;
-
+import com.hk3fg.board.dto.CommentDto;
 import com.hk3fg.board.service.BoardService;
 
 import lombok.AllArgsConstructor;
@@ -81,7 +81,9 @@ public class BoardController {
     /* 게시글 쓰기 */
     @GetMapping("/post")
     public String write(Model model,HttpServletRequest request) {
+
         logger.info("BoardController : write / Action : post OPEN | start");
+
         //////////////////////////ip가져오기///////////////////////////
 
         String ip = InfoController.getIp(request);
@@ -103,7 +105,7 @@ public class BoardController {
     public String write(BoardDto boardDto) {
         logger.info("BoardController : write / Action : post SAVE | start");
 
-        boardService.savePost(boardDto);
+        boardService.savePost_Write(boardDto);
 
         logger.info("BoardController : write / Action : post SAVE | end\n");
 
@@ -135,7 +137,7 @@ public class BoardController {
     public String update(BoardDto boardDTO) {
         logger.info("BoardController : update / Action : save Entity | start");
 
-        boardService.savePost(boardDTO);
+        boardService.savePost_Write(boardDTO);
 
         logger.info("BoardController : update / Action : save Entity | end\n");
         return "redirect:/list/?page=1";
@@ -163,24 +165,17 @@ public class BoardController {
         logger.info("BoardController : search / Action : search Entity | end\n");
         return "board/list";
     }
-    @GetMapping("/coment")
-    public String coment(Model model,HttpServletRequest request) {
-        logger.info("BoardController : write / Action : post OPEN | start");
-        //////////////////////////ip가져오기///////////////////////////
 
-        String ip = InfoController.getIp(request);
+    /* !!!!!!!!!!! 댓글 기능 관련 !!!!!!!!!!! */
+    @PostMapping("/post_comment")
+    public String comment(CommentDto commentDto) {
+        logger.info("BoardController : comment / Action : post_comment SAVE | start");
 
-        //////////////////////////ip가져오기///////////////////////////
-        String username = InfoController.get_Uid();
+        boardService.savePost_Comment(commentDto);
 
-        list(model,1);
-        model.addAttribute("pageNum", 1);
+        logger.info("BoardController : comment / Action : post_comment SAVE | end\n");
 
-        model.addAttribute("Login_UID",username);
-        model.addAttribute("anonymous_IP",ip);
-
-        logger.info("BoardController : write / Action : post OPEN | end\n");
-        return "board/write";
+        return "redirect:/list/?page=1";
     }
 
 

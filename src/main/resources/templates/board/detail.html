@@ -72,14 +72,21 @@
 
         <div id="div_comment">
             <div id="div_write_comment">
-                <form action="/post" method="post" id="form_comment">
+                <form action="/post_comment" method="post" id="form_comment">
                     <p>작성자 :
                         <span th:text="${Login_UID != 'anonymousUser'}?
                                                 ${Login_UID} :  '익명_' + ${anonymous_IP}">
                         </span>
                     </p>
 
-                    <input type="text" name="input_comment" id="input_comment">
+                    <input type="text" name="comment" id="comment">
+                    <input type="number"
+                           name="content_num"
+                           id="content_num"
+                           th:value="${boardDto.id}">
+                    <input type="text" name="writer" id="writer"
+                           th:value="${Login_UID != 'anonymousUser'}?
+                                                ${Login_UID} :  '익명_' + ${anonymous_IP}">
                     <button type="button" id="btn_input_comment">작성</button>
                 </form>
             </div>

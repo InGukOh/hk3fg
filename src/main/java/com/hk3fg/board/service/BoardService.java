@@ -1,9 +1,11 @@
 package com.hk3fg.board.service;
 
+import com.hk3fg.board.domain.repository.CommentRepository;
 import com.hk3fg.board.dto.BoardDto;
 import com.hk3fg.board.domain.entity.BoardEntity;
 import com.hk3fg.board.domain.repository.BoardRepository;
 
+import com.hk3fg.board.dto.CommentDto;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +24,7 @@ import java.util.Optional;
 @Service
 public class BoardService {
     private BoardRepository boardRepository;
+    private CommentRepository commentRepository;
     private static final int BLOCK_PAGE_NUM_COUNT = 10;  // 블럭에 존재하는 페이지 번호 수
     private static final int PAGE_POST_COUNT = 20;       // 한 페이지에 존재하는 게시글 수
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -61,7 +64,7 @@ public class BoardService {
     }
 
     @Transactional
-    public Long savePost(BoardDto boardDto) {
+    public Long savePost_Write(BoardDto boardDto) {
         logger.info("BoardService : savePost / Action : save Data(게시글) | Activate\n");
         return boardRepository.save(boardDto.toEntity()).getId();
     }
@@ -146,5 +149,11 @@ public class BoardService {
                 .build();
     }
 
+    /* !!!!!!!!!!! 댓글 기능 관련 !!!!!!!!!!! */
 
+    @Transactional
+    public Long savePost_Comment(CommentDto commentDto) {
+        logger.info("BoardService : savePost_Comment / Action : save Data(댓글) | Activate\n");
+        return commentRepository.save(commentDto.toEntity()).getComment_id();
+    }
 }
