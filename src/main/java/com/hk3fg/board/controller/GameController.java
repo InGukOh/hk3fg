@@ -33,7 +33,7 @@ public class GameController {
         UserDto userDto = loginService.getUserInfo(username);
 
         model.addAttribute("uID_Info",userDto);
-        model.addAttribute("Login_UID", username);
+        model.addAttribute("Login_uID", username);
         if (username.equals("anonymousUser")) return "/member/loginForm";
         return "/game/game_BungterMelon";
     }

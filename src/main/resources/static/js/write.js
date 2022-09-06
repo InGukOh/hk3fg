@@ -2,8 +2,8 @@
     const title_value = document.getElementById('title');
     const target_form = document.getElementById('form_write');
     const append = document.getElementById("append");
-    
     btn_submit.onclick = function (){
+
         if(title_value.value.trim() == ""){
             alert('제목을 입력해주세요');
             title_value.focus();

@@ -15,7 +15,7 @@
     <div th:insert="common/header.html" id="header"></div>
 
     <div id="main_content">
-        <th:block th:if="${Login_UID != 'anonymousUser'} and ${Login_UID == boardDto.writer}">
+        <th:block th:if="${Login_uID != 'anonymousUser'} and ${Login_uID == boardDto.writer}">
             <table name="btn_group_detail" id="btn_group_detail" class="table-bordered">
                 <tbody>
                     <tr id="tr_detail_option">
@@ -74,8 +74,8 @@
             <div id="div_write_comment">
                 <form action="/post_comment" method="post" id="form_comment">
                     <p>작성자 :
-                        <span th:text="${Login_UID != 'anonymousUser'}?
-                                                ${Login_UID} :  '익명_' + ${anonymous_IP}">
+                        <span th:text="${Login_uID != 'anonymousUser'}?
+                                                ${Login_uID} :  '익명_' + ${anonymous_IP}">
                         </span>
                     </p>
 
@@ -85,8 +85,8 @@
                            id="content_num"
                            th:value="${boardDto.id}">
                     <input type="text" name="writer" id="writer"
-                           th:value="${Login_UID != 'anonymousUser'}?
-                                                ${Login_UID} :  '익명_' + ${anonymous_IP}">
+                           th:value="${Login_uID != 'anonymousUser'}?
+                                                ${Login_uID} :  '익명_' + ${anonymous_IP}">
                     <button type="button" id="btn_input_comment">작성</button>
                 </form>
             </div>

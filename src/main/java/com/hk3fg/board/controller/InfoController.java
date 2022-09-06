@@ -19,7 +19,7 @@ public class InfoController {
     //////////////////////// /사용자 정보 //////////////////////////
     /*uID 가져오기*/
     public static String get_Uid(){
-        logger.info("|||||||| GETTING UID ||||||||");
+        logger.info("|||||||| GETTING uID ||||||||");
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
         if (principal instanceof UserDetails) {
@@ -27,8 +27,8 @@ public class InfoController {
         } else {
             username = principal.toString();
         }
-        logger.info(">>>>> UID : "+username+" <<<<<");
-        logger.info("|||||||| GETTING UID ||||||||");
+        logger.info(">>>>> uID : "+username+" <<<<<");
+        logger.info("|||||||| GETTING uID ||||||||");
         return username;
     }
     /*IP앞 두개 가져오기*/
@@ -60,7 +60,13 @@ public class InfoController {
         logger.info("|||||||| GETTING IP ||||||||\n");
         logger.info("%n");
 
+        logger.info("ip : " + ip);
+
         String[] get_ip = ip.split("\\.");
+        if(get_ip.length == 0){
+            get_ip = ip.split(":");
+        }
+        logger.info(Arrays.toString(get_ip));
 
         String view_ip = get_ip[0]+"."+get_ip[1];
         logger.info("!!!!! Result : IP Address : "+view_ip+"!!!!!\n");

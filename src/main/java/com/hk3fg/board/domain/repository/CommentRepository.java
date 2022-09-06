@@ -10,5 +10,5 @@ import java.util.List;
 public interface CommentRepository  extends JpaRepository<CommentEntity, Long> {
     List<CommentEntity> findByContentNum(Long contentNum);
 
-    /*Optional<CommentEntity> findByUID(String uID);*/
+    /*Optional<CommentEntity> findByuID(String uID);*/
 }

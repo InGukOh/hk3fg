@@ -30,7 +30,7 @@
         <hr>
         <br>
         <div id="fragment_list" th:fragment="fragment_list(page)">
-            <a th:if="${Login_UID != 'anonymousUser'}" th:href="@{/post}">글쓰기</a>
+            <a th:if="${Login_uID != 'anonymousUser'}" th:href="@{/post}">글쓰기</a>
             <table id="table_list">
                 <thead>
                 <tr>

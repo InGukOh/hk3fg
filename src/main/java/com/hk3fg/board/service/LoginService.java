@@ -43,7 +43,7 @@ public class LoginService implements UserDetailsService {
     public UserDetails loadUserByUsername(String uID) throws UsernameNotFoundException {
         logger.info("LoginService : loadUserByUsername / Action : get UserDATA from DB | start");
 
-        Optional<UserEntity> userEntityWrapper = userRepository.findByUID(uID);
+        Optional<UserEntity> userEntityWrapper = userRepository.findByuID(uID);
         UserEntity userEntity = userEntityWrapper.get();
 
         List<GrantedAuthority> authorities = new ArrayList<>();
@@ -60,8 +60,10 @@ public class LoginService implements UserDetailsService {
     @Transactional
     public UserDto getUserInfo(String uID){
 
-        Optional<UserEntity> userEntityWrapper = userRepository.findByUID(uID);
+        Optional<UserEntity> userEntityWrapper = userRepository.findByuID(uID);
         UserEntity userEntity = userEntityWrapper.get();
+
+        logger.info("userEnt : " +userEntity);
 
         return this.convertEntityToDto(userEntity);
     }

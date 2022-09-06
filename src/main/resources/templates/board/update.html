@@ -12,7 +12,7 @@
 <body>
 
     <div th:insert="common/header.html" id="header"></div>
-    <span th:if="${Login_UID != boardDto.writer }">
+    <span th:if="${Login_uID != boardDto.writer }">
         <script type="text/javascript">
             alert("!!수정 권한이 없습니다!!\n로그인 해주세요.");
             document.location="/list/?page=1"
@@ -23,9 +23,9 @@
             <input type="hidden" name="_method" value="put"/>
             <input type="hidden" name="id" th:value="${boardDto.id}"/>
 
-            <p>제목 : <input type="text" name="title"  th:value="${boardDto.title}"> </p>
-            <p>작성자 : <span th:text="${Login_UID}"></span></p>
-            <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_UID}">
+            <p>제목 : <input type="text" name="title"  id="title" th:value="${boardDto.title}"> </p>
+            <p>작성자 : <span th:text="${Login_uID}"></span></p>
+            <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_uID}">
 
             <div contenteditable="true" id="input_div_content_editable" aria-placeholder="여기입력" style="overflow-y: scroll">
 
@@ -33,7 +33,7 @@
 
             <textarea name="content" id="append" th:text="${boardDto.content}" hidden="hidden"></textarea>
 
-            <button type="submit" id="btn_submit">수정</button>
+            <button type="button" id="btn_submit">수정</button>
         </form>
     </div>
 
@@ -53,7 +53,6 @@
 
     <script type="text/javascript">
         var content = document.getElementById("input_div_content_editable");
-        var append = document.getElementById("append");
         content.innerHTML = append.value;
     </script>
 

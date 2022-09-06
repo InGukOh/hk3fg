@@ -23,6 +23,7 @@ public class WebConfiguration implements WebMvcConfigurer {
         /* '/img/**'로 호출하는 자원은 '/static/img/' 폴더 아래에서 찾는다. */
         registry.addResourceHandler("/img/**").addResourceLocations("classpath:/image_Game/").setCachePeriod(60 * 60 * 24 * 365);
 
+        //registry.addResourceHandler("/board/**").addResourceLocations("classpath:/templates/board/").setCachePeriod(60 * 60 * 24 * 365);
         registry.addResourceHandler("/Bungtermelon_Marge/**").addResourceLocations("classpath:/Game_BungterMelon_Marge/").setCachePeriod(60 * 60 * 24 * 365);
         registry.addResourceHandler("cocos2d-js-min.js").addResourceLocations("classpath:/Game_BungterMelon_Marge/").setCachePeriod(60 * 60 * 24 * 365);
         registry.addResourceHandler("/src/project.js").addResourceLocations("classpath:/Game_BungterMelon_Marge/").setCachePeriod(60 * 60 * 24 * 365);

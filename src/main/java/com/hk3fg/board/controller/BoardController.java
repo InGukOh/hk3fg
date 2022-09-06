@@ -28,7 +28,7 @@ public class BoardController {
     @GetMapping("/")
     public String MainPage(){
         logger.info("BoardController : MainPage / Action : MainPage OPEN | Activate");
-        return "/board/index";
+        return "board/index";
     }
 
     /* 게시글 목록 */
@@ -48,7 +48,7 @@ public class BoardController {
         model.addAttribute("nextBlock",(pageNum + 10 > totalLastPageNum)? totalLastPageNum : pageNum+10);
         model.addAttribute("lastBlock",totalLastPageNum);
         model.addAttribute("pageNum",pageNum);
-        model.addAttribute("Login_UID",username);
+        model.addAttribute("Login_uID",username);
 
         logger.info("BoardController : list / Action : list OPEN | end\n");
 
@@ -61,7 +61,7 @@ public class BoardController {
                          HttpServletRequest request,
                          @PathVariable("no") Long id,
                          @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
-        logger.info("BoardController : detail / Action : get Data(게시글) & get UID | start");
+        logger.info("BoardController : detail / Action : get Data(게시글) & get uID | start");
 
         String username = InfoController.get_Uid();
         String ip = InfoController.getIp(request);
@@ -70,13 +70,13 @@ public class BoardController {
 
         list(model,pageNum);
 
-        model.addAttribute("Login_UID",username);
+        model.addAttribute("Login_uID",username);
         model.addAttribute("anonymous_IP",ip);
         model.addAttribute("boardDto", boardDTO);
         model.addAttribute("pageNum", pageNum);
         model.addAttribute("commentList",commentList);
 
-        logger.info("BoardController : detail / Action : get Data(게시글) & get UID | end\n");
+        logger.info("BoardController : detail / Action : get Data(게시글) & get uID | end\n");
         return "board/detail";
     }
 
@@ -97,7 +97,7 @@ public class BoardController {
         list(model,1);
         model.addAttribute("pageNum", 1);
 
-        model.addAttribute("Login_UID",username);
+        model.addAttribute("Login_uID",username);
         model.addAttribute("anonymous_IP",ip);
 
         logger.info("BoardController : write / Action : post OPEN | end\n");
@@ -128,7 +128,9 @@ public class BoardController {
 
         model.addAttribute("pageNum", 1);
 
-        model.addAttribute("Login_UID",username);
+        logger.info("boardDTo: " + boardDTO);
+
+        model.addAttribute("Login_uID",username);
         model.addAttribute("boardDto", boardDTO);
 
         logger.info("BoardController : edit / Action : getting Entity & insert Entity | end\n");

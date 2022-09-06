@@ -15,8 +15,8 @@
         <form  action="/post" method="post" id="form_write" ><!--onsubmit="return false"-->
 
             <p>제목 : <input type="text" name="title" id="title"> </p>
-            <p>작성자 : <span th:text="${Login_UID}"></span></p>
-            <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_UID}">
+            <p>작성자 : <span th:text="${Login_uID}"></span></p>
+            <input type="text" name="writer" id="writer" hidden="hidden" th:value="${Login_uID}">
 
             <div contenteditable="true" id="input_div_content_editable" aria-placeholder="여기입력" style="overflow-y: scroll; padding: 12px">
 
