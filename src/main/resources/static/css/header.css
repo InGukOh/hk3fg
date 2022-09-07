@@ -1,5 +1,20 @@
-h1#header_Text {
-    text-align: center;
-    color: #ff0000;
-    font-size: 30px;
+.header_container {
+    padding: 20px;
+    /*min-width: 1280px;*/
+    margin: 0px auto;
+}
+.nav > li >a{
+    font-weight: bold;
+}
+.col-md-3 {
+    /*border: 1px solid #000000;*/
+    position: relative;
+}
+.show_uID {
+    /*border: 1px solid #000000;*/
+    color: #f0f0f0;
+    width: fit-content;
+    margin-right:  5px;
+    position: absolute;
+    right: 90px;
 }

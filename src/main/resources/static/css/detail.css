@@ -1,13 +1,7 @@
-body{
-    padding: 0px 30px;
-    min-width: 1280px;
-}
-div#main_content{
-    border: 2px solid #000000;
-    margin: 30px auto;
-    margin-left: 20px;
-    margin-right: 20%;
-}
+@import "background.css";
+@import "default_set.css";
+
+
 table#btn_group_detail{
     float: right;
     margin-right: 20px;
@@ -123,7 +117,7 @@ div#View_Content{
 /*!!!!!!!!댓글 관련!!!!!!!!*/
 
 #list_from_detail{
-    border:2px solid #ffff00;
+    /*border:2px solid #ffff00;*/
     margin-left: 20px;
     margin-right: 20%;
 }

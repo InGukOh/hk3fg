@@ -1,0 +1,7 @@
+body {
+    background-image: url("../web-img/background_template.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+}

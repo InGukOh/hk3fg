@@ -5,7 +5,6 @@ spring:
     password: dlsrnr12!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
-
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     open-in-view: false

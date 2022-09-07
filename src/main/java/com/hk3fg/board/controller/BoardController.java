@@ -26,8 +26,10 @@ public class BoardController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/")
-    public String MainPage(){
+    public String MainPage(Model model){
         logger.info("BoardController : MainPage / Action : MainPage OPEN | Activate");
+        String username = InfoController.get_Uid();
+        model.addAttribute("Login_uID",username);
         return "board/index";
     }
 
@@ -42,8 +44,9 @@ public class BoardController {
         Integer[] pageList = boardService.getPageList(pageNum,Method_Name,"");
         Integer totalLastPageNum = boardService.totalLastPageNum(Method_Name,"");
 
+        logger.info("pageList : " + Arrays.toString(Arrays.stream(pageList).filter(i -> i != null).toArray()));
         model.addAttribute("boardList", boardList);
-        model.addAttribute("pageList", pageList);
+        model.addAttribute("pageList", Arrays.stream(pageList).filter(i -> i != null).toArray());
         model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
         model.addAttribute("nextBlock",(pageNum + 10 > totalLastPageNum)? totalLastPageNum : pageNum+10);
         model.addAttribute("lastBlock",totalLastPageNum);
@@ -164,13 +167,13 @@ public class BoardController {
         logger.info("BoardController : search / Action : search Entity | start");
         String Method_Name = "search";
         List<BoardDto> boardDtoList = boardService.searchPosts(keyword);
-        /*String username = InfoController.get_Uid();*/
+        String username = InfoController.get_Uid();
         Integer[] pageList = boardService.getPageList(pageNum,Method_Name,keyword);
         Integer totalLastPageNum = boardService.totalLastPageNum(Method_Name,keyword);
 
-
+        model.addAttribute("Login_uID",username);
         model.addAttribute("boardList", boardDtoList);
-        model.addAttribute("pageList", pageList);
+        model.addAttribute("pageList", Arrays.stream(pageList).filter(i -> i != null).toArray());
         model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
         model.addAttribute("nextBlock",(pageNum + 10 > totalLastPageNum)? totalLastPageNum : pageNum+10);
         model.addAttribute("lastBlock",totalLastPageNum);

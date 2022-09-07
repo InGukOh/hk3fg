@@ -1,13 +1,41 @@
-div#mainContent{
-    padding: 0px 30px;
-}
+@import "background.css";
+@import "default_set.css";
+
 table#table_list {
     text-align: center;
     border-collapse: collapse;
+    background-color: #ffffff;
+    background-color: rgba(255,255,255,0.8);
 }
 
+.th-1 {
+    width: 10%;
+}
+.th-2 {
+    width: 50%;
+}
+.th-3 {
+    width: 15%;
+}
+.th-4 {
+    width: 15%;
+}
+.th-5 {
+    width: 10%;
+}
 table#table_list,
 table#table_list > th,
 table#table_list > tr , td {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+}
+
+.btn_paging {
+    /*border:1px solid #ff0000;*/
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+}
+.pagination > li,span {
+    margin: 2px 2px auto;
+    border-radius: 5px;
 }
