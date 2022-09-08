@@ -1,7 +1,12 @@
 body {
-    background-image: url("../web-img/background_template.png");
+    border: 1px solid #000000;
+    background-image: url("../img/BackGround_01.png");
     background-repeat: no-repeat;
-    background-size: 100%;
     background-position: center;
     background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size : cover;
+    -moz-background-size : cover;
+    -o-background-size: cover;
+    margin: 0 auto;
 }

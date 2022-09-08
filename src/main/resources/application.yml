@@ -3,6 +3,9 @@ spring:
     url: jdbc:mysql://localhost:3306/dhdlsrnr1232?serverTimezone=Asia/Seoul
     username: dhdlsrnr1232
     password: dlsrnr12!
+#    url: jdbc:mysql://localhost:3306/hk3fg?serverTimezone=Asia/Seoul
+#    username: root
+#    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

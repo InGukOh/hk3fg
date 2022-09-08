@@ -14,8 +14,12 @@
     error code : <span th:text="${code}"></span>
     <br>error msg : <span th:text="${msg}"></span>
     <br>timestamp : <span th:text="${timestamp}"></span>
-    <a href="#" class="nav-link px-2 text-muted" onclick="location.href='/'" >Home</a>
-</div>
 
+    잠시후 메인페이지로 돌아갑니다.
+
+</div>
+<script>
+    setTimeout('location.href="/"', 3000);
+</script>
 </body>
 </html>

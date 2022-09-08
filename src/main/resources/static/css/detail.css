@@ -117,7 +117,7 @@ div#View_Content{
 /*!!!!!!!!댓글 관련!!!!!!!!*/
 
 #list_from_detail{
-    /*border:2px solid #ffff00;*/
-    margin-left: 20px;
-    margin-right: 20%;
+    border:2px solid #ffff00;
+    padding: 0 15%;
+    margin: 0 auto;
 }

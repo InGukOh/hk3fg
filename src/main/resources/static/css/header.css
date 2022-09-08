@@ -1,14 +1,22 @@
 .header_container {
+    /*border: 1px solid #ff0000;*/
     padding: 20px;
-    /*min-width: 1280px;*/
+    max-width: 1980px;
     margin: 0px auto;
+}
+.d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom {
+    max-width: 1280px;
 }
 .nav > li >a{
     font-weight: bold;
 }
 .col-md-3 {
-    /*border: 1px solid #000000;*/
+    /*border: 1px solid #ff0000;*/
     position: relative;
+}
+.img_btn {
+    width: auto;
+    height: 40px;
 }
 .show_uID {
     /*border: 1px solid #000000;*/

@@ -1,22 +1,21 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <link rel="stylesheet" th:href="@{/static/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 <div class="header_container">
+    <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <a href="/" class="d-flex align-items-center">
             <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
         </a>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary" onclick="location.href='/'" >Home</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/list/?page=1'">Board</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/game_BungterMelon'">Game</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">FAQs</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 d-flex flex-row bd-highlight mb-3">
+            <li><a href="#" class="nav-link px-2 link-secondary" onclick="location.href='/'" ><img th:src="@{/img/btn_main.png}" class="img_btn"></a></li>
+            <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/list/?page=1'"><img th:src="@{/img/btn_board.png}" class="img_btn"></a></li>
+            <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/game_BungterMelon'"><img th:src="@{/img/btn_game.png}" class="img_btn"></a></li>
+            <li><a href="#" class="nav-link px-2 link-dark"><img th:src="@{/img/btn_scoreboard.png}" class="img_btn"></a></li>
         </ul>
-
 
         <div class="col-md-3 text-end">
             <a sec:authorize ="isAuthenticated()" class="btn btn-secondary me-2 show_uID"><span th:text="${Login_uID}"></span></a>
@@ -28,6 +27,7 @@
                     sec:authorize ="isAnonymous()" th:href="@{/member/signUp}">Sign-up</a>
         </div>
     </header>
+    </div>
 </div>
 
 

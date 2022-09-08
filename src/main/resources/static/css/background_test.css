@@ -1,0 +1,2262 @@
+.대지_1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 311;
+}
+.페이지_정보 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 310;
+}
+
+.SCORE_BOARD {
+    font-size: 11px;
+    font-family: "Gmarket Sans TTF";
+    color: rgb(173, 122, 223);
+    font-weight: bold;
+    line-height: 1.075;
+    -moz-transform: matrix( 7.47141110924515,0,0,7.47141110924514,0,0);
+    -webkit-transform: matrix( 7.47141110924515,0,0,7.47141110924514,0,0);
+    -ms-transform: matrix( 7.47141110924515,0,0,7.47141110924514,0,0);
+    position: absolute;
+    left: 521.141px;
+    top: 881.745px;
+    z-index: 308;
+}
+._ {
+    font-size: 30px;
+    font-family: "Bahnschrift";
+    color: rgb(250, 205, 87);
+    font-weight: bold;
+    line-height: 1.2;
+    -moz-transform: matrix( -1,0,0,1,0,0);
+    -webkit-transform: matrix( -1,0,0,1,0,0);
+    -ms-transform: matrix( -1,0,0,1,0,0);
+    position: absolute;
+    left: 370.334px;
+    top: 705.351px;
+    z-index: 307;
+}
+._04 {
+    font-size: 30px;
+    font-family: "Bahnschrift";
+    color: rgb(250, 205, 87);
+    font-weight: bold;
+    line-height: 1.2;
+    position: absolute;
+    left: 393.094px;
+    top: 705.5px;
+    z-index: 306;
+}
+
+.그룹_13 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 304;
+}
+._03 {
+    font-size: 14.464px;
+    font-family: "Bahnschrift";
+    color: rgb(250, 224, 105);
+    font-weight: bold;
+    line-height: 1.2;
+    -moz-transform: matrix( 5.53081318354939,0,0,5.53081318354939,0,0);
+    -webkit-transform: matrix( 5.53081318354939,0,0,5.53081318354939,0,0);
+    -ms-transform: matrix( 5.53081318354939,0,0,5.53081318354939,0,0);
+    position: absolute;
+    left: 253.775px;
+    top: 785.822px;
+    z-index: 303;
+}
+.타원_1 {
+    border-width: 8px;
+    border-color: rgb(250, 224, 105);
+    border-style: solid;
+    border-radius: 50%;
+    position: absolute;
+    left: 181px;
+    top: 716px;
+    width: 144px;
+    height: 144px;
+    z-index: 302;
+}
+.페이지_버튼 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 299;
+}
+.자유게시판 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 298;
+}
+.자유게시판 {
+    font-size: 13px;
+    font-family: "KoreanSDNRB";
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    -moz-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -webkit-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -ms-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    position: absolute;
+    left: 897.749px;
+    top: 82.366px;
+    z-index: 297;
+}
+.사각형_4 {
+    border-radius: 7px;
+    background-color: rgb(250, 224, 105);
+    position: absolute;
+    left: 826px;
+    top: 61px;
+    width: 203px;
+    height: 56px;
+    z-index: 296;
+}
+.사각형_4_복사 {
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.702;
+    position: absolute;
+    left: 818px;
+    top: 61px;
+    width: 218px;
+    height: 56px;
+    z-index: 295;
+}
+.점수판 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 293;
+}
+.SCOREBOARD {
+    font-size: 13px;
+    font-family: "KoreanSDNRB";
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    -moz-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -webkit-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -ms-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    position: absolute;
+    left: 620.227px;
+    top: 81.913px;
+    z-index: 292;
+}
+.사각형_4 {
+    border-radius: 7px;
+    background-color: rgb(250, 224, 105);
+    position: absolute;
+    left: 527px;
+    top: 61px;
+    width: 274px;
+    height: 56px;
+    z-index: 291;
+}
+.사각형_4_복사 {
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.702;
+    position: absolute;
+    left: 519px;
+    top: 61px;
+    width: 290px;
+    height: 56px;
+    z-index: 290;
+}
+.게임시작 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 288;
+}
+.GAME {
+    font-size: 11.593px;
+    font-family: "KoreanSDNRB";
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    -moz-transform: matrix( 0.96607329946953,0,0,0.96607329946952,0,0);
+    -webkit-transform: matrix( 0.96607329946953,0,0,0.96607329946952,0,0);
+    -ms-transform: matrix( 0.96607329946953,0,0,0.96607329946952,0,0);
+    position: absolute;
+    left: 367.736px;
+    top: 64.044px;
+    z-index: 287;
+}
+.START {
+    font-size: 13px;
+    font-family: "KoreanSDNRB";
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    -moz-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -webkit-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -ms-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    position: absolute;
+    left: 391.043px;
+    top: 81.913px;
+    z-index: 286;
+}
+.사각형_4 {
+    border-radius: 7px;
+    background-color: rgb(250, 224, 105);
+    position: absolute;
+    left: 322px;
+    top: 61px;
+    width: 183px;
+    height: 56px;
+    z-index: 285;
+}
+.사각형_4_복사 {
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.702;
+    position: absolute;
+    left: 314px;
+    top: 61px;
+    width: 198px;
+    height: 56px;
+    z-index: 284;
+}
+.메인 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 282;
+}
+.MAIN {
+    font-size: 13px;
+    font-family: "KoreanSDNRB";
+    color: rgb(0, 0, 0);
+    line-height: 1.2;
+    -moz-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -webkit-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    -ms-transform: matrix( 2.15440022986843,0,0,2.15440022986843,0,0);
+    position: absolute;
+    left: 191.037px;
+    top: 81.202px;
+    z-index: 281;
+}
+.사각형_4 {
+    border-radius: 7px;
+    background-color: rgb(250, 224, 105);
+    position: absolute;
+    left: 115px;
+    top: 61px;
+    width: 183px;
+    height: 56px;
+    z-index: 280;
+}
+.사각형_4_복사 {
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.702;
+    position: absolute;
+    left: 108px;
+    top: 61px;
+    width: 198px;
+    height: 56px;
+    z-index: 279;
+}
+
+.격자 {
+    opacity: 0.102;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 275;
+}
+.그룹_6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 274;
+}
+.그룹_5_복사_2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 273;
+}
+.그룹_4_복사_14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 272;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1803px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 271;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1814px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 270;
+}
+.그룹_4_복사_13 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 268;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1681px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 267;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1692px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 266;
+}
+.그룹_4_복사_12 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 264;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1558px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 263;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1569px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 262;
+}
+.그룹_4_복사_11 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 260;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1436px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 259;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1447px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 258;
+}
+.그룹_4_복사_10 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 256;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1313px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 255;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1324px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 254;
+}
+.그룹_4_복사_9 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 252;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1191px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 251;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1202px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 250;
+}
+.그룹_4_복사_8 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 248;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1068px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 247;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1079px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 246;
+}
+.그룹_4_복사_7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 244;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 946px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 243;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 957px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 242;
+}
+.그룹_4_복사_6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 240;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 824px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 239;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 835px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 238;
+}
+.그룹_4_복사_5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 236;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 701px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 235;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 712px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 234;
+}
+.그룹_4_복사_4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 232;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 579px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 231;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 590px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 230;
+}
+.그룹_4_복사_3 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 228;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 456px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 227;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 467px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 226;
+}
+.그룹_4_복사_2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 224;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 334px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 223;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 345px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 222;
+}
+.그룹_4_복사 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 220;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 211px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 219;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 222px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 218;
+}
+.그룹_4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 216;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 89px;
+    top: 884px;
+    width: 30px;
+    height: 6px;
+    z-index: 215;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 100px;
+    top: 872px;
+    width: 7px;
+    height: 30px;
+    z-index: 214;
+}
+.그룹_5_복사 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 211;
+}
+.그룹_4_복사_14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 210;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1803px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 209;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1814px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 208;
+}
+.그룹_4_복사_13 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 206;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1681px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 205;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1692px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 204;
+}
+.그룹_4_복사_12 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 202;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1558px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 201;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1569px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 200;
+}
+.그룹_4_복사_11 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 198;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1436px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 197;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1447px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 196;
+}
+.그룹_4_복사_10 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 194;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1313px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 193;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1324px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 192;
+}
+.그룹_4_복사_9 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 190;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1191px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 189;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1202px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 188;
+}
+.그룹_4_복사_8 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 186;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1068px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 185;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1079px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 184;
+}
+.그룹_4_복사_7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 182;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 946px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 181;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 957px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 180;
+}
+.그룹_4_복사_6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 178;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 824px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 177;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 835px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 176;
+}
+.그룹_4_복사_5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 174;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 701px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 173;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 712px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 172;
+}
+.그룹_4_복사_4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 170;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 579px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 169;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 590px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 168;
+}
+.그룹_4_복사_3 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 166;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 456px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 165;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 467px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 164;
+}
+.그룹_4_복사_2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 162;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 334px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 161;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 345px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 160;
+}
+.그룹_4_복사 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 158;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 211px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 157;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 222px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 156;
+}
+.그룹_4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 154;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 89px;
+    top: 538px;
+    width: 30px;
+    height: 6px;
+    z-index: 153;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 100px;
+    top: 526px;
+    width: 7px;
+    height: 30px;
+    z-index: 152;
+}
+.그룹_5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 149;
+}
+.그룹_4_복사_14 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 148;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1803px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 147;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1814px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 146;
+}
+.그룹_4_복사_13 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 144;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1681px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 143;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1692px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 142;
+}
+.그룹_4_복사_12 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 140;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1558px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 139;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1569px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 138;
+}
+.그룹_4_복사_11 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 136;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1436px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 135;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1447px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 134;
+}
+.그룹_4_복사_10 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 132;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1313px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 131;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1324px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 130;
+}
+.그룹_4_복사_9 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 128;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1191px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 127;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1202px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 126;
+}
+.그룹_4_복사_8 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 124;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1068px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 123;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1079px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 122;
+}
+.그룹_4_복사_7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 120;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 946px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 119;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 957px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 118;
+}
+.그룹_4_복사_6 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 116;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 824px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 115;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 835px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 114;
+}
+.그룹_4_복사_5 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 112;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 701px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 111;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 712px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 110;
+}
+.그룹_4_복사_4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 108;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 579px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 107;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 590px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 106;
+}
+.그룹_4_복사_3 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 104;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 456px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 103;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 467px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 102;
+}
+.그룹_4_복사_2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 100;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 334px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 99;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 345px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 98;
+}
+.그룹_4_복사 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 96;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 211px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 95;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 222px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 94;
+}
+.그룹_4 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 92;
+}
+.사각형_1_복사 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 89px;
+    top: 191px;
+    width: 30px;
+    height: 6px;
+    z-index: 91;
+}
+.사각형_1 {
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 100px;
+    top: 179px;
+    width: 7px;
+    height: 30px;
+    z-index: 90;
+}
+.그룹_2 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 86;
+}
+.선_2_복사_8 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 1000px;
+    width: 2019px;
+    height: 1px;
+    z-index: 85;
+}
+.선_2_복사_7 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 885px;
+    width: 2019px;
+    height: 1px;
+    z-index: 84;
+}
+.선_2_복사_6 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 769px;
+    width: 2019px;
+    height: 1px;
+    z-index: 83;
+}
+.선_2_복사_5 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 654px;
+    width: 2019px;
+    height: 1px;
+    z-index: 82;
+}
+.선_2_복사_4 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 539px;
+    width: 2019px;
+    height: 1px;
+    z-index: 81;
+}
+.선_2_복사_3 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 423px;
+    width: 2019px;
+    height: 1px;
+    z-index: 80;
+}
+.선_2_복사_2 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 308px;
+    width: 2019px;
+    height: 1px;
+    z-index: 79;
+}
+.선_2_복사 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 192px;
+    width: 2019px;
+    height: 1px;
+    z-index: 78;
+}
+.선_2 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: -37px;
+    top: 77px;
+    width: 2019px;
+    height: 1px;
+    z-index: 77;
+}
+.그룹_1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 75;
+}
+.선_1_복사_14 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1816px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 74;
+}
+.선_1_복사_13 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1694px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 73;
+}
+.선_1_복사_12 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1571px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 72;
+}
+.선_1_복사_11 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1449px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 71;
+}
+.선_1_복사_10 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1326px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 70;
+}
+.선_1_복사_9 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1204px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 69;
+}
+.선_1_복사_8 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 1081px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 68;
+}
+.선_1_복사_7 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 959px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 67;
+}
+.선_1_복사_6 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 837px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 66;
+}
+.선_1_복사_5 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 714px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 65;
+}
+.선_1_복사_4 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 592px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 64;
+}
+.선_1_복사_3 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 469px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 63;
+}
+.선_1_복사_2 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 347px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 62;
+}
+.선_1_복사 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 224px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 61;
+}
+.선_1 {
+    border-width: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    left: 102px;
+    top: -34px;
+    width: 1px;
+    height: 1161px;
+    z-index: 60;
+}
+.사각형 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 57;
+}
+.그룹_9_복사 {
+    opacity: 0.502;
+    position: absolute;
+    left: 1214px;
+    top: 186px;
+    width: 105px;
+    height: 104px;
+    z-index: 56;
+}
+.사각형_3_복사_6 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -38px;
+    top: -40px;
+    width: 138px;
+    height: 137px;
+    z-index: 55;
+}
+.사각형_3_복사_8 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -65px;
+    top: -68px;
+    width: 137px;
+    height: 138px;
+    z-index: 54;
+}
+.사각형_3_복사_7 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -56px;
+    top: -58px;
+    width: 137px;
+    height: 137px;
+    z-index: 53;
+}
+.사각형_3_복사_6 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -47px;
+    top: -49px;
+    width: 137px;
+    height: 137px;
+    z-index: 52;
+}
+.사각형_3_복사_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    width: 137px;
+    height: 137px;
+    z-index: 51;
+}
+.사각형_3_복사_5 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -29px;
+    top: -31px;
+    width: 138px;
+    height: 138px;
+    z-index: 50;
+}
+.사각형_3_복사_4 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -20px;
+    top: -22px;
+    width: 138px;
+    height: 138px;
+    z-index: 49;
+}
+.사각형_3_복사_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 25px;
+    top: 23px;
+    width: 138px;
+    height: 137px;
+    z-index: 48;
+}
+.사각형_3_복사_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 34px;
+    top: 32px;
+    width: 138px;
+    height: 138px;
+    z-index: 47;
+}
+.사각형_3_복사_2 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -12px;
+    top: -14px;
+    width: 138px;
+    height: 138px;
+    z-index: 46;
+}
+.사각형_3_복사 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -3px;
+    top: -5px;
+    width: 138px;
+    height: 138px;
+    z-index: 45;
+}
+.사각형_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    width: 137px;
+    height: 137px;
+    z-index: 44;
+}
+.그룹_9 {
+    opacity: 0.702;
+    position: absolute;
+    left: 475px;
+    top: 914px;
+    width: 105px;
+    height: 104px;
+    z-index: 42;
+}
+.사각형_3_복사_6 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -38px;
+    top: -40px;
+    width: 138px;
+    height: 137px;
+    z-index: 41;
+}
+.사각형_3_복사_8 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -65px;
+    top: -68px;
+    width: 137px;
+    height: 138px;
+    z-index: 40;
+}
+.사각형_3_복사_7 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -56px;
+    top: -58px;
+    width: 137px;
+    height: 137px;
+    z-index: 39;
+}
+.사각형_3_복사_6 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -47px;
+    top: -49px;
+    width: 137px;
+    height: 137px;
+    z-index: 38;
+}
+.사각형_3_복사_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    width: 137px;
+    height: 137px;
+    z-index: 37;
+}
+.사각형_3_복사_5 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -29px;
+    top: -31px;
+    width: 138px;
+    height: 138px;
+    z-index: 36;
+}
+.사각형_3_복사_4 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -20px;
+    top: -22px;
+    width: 138px;
+    height: 138px;
+    z-index: 35;
+}
+.사각형_3_복사_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 25px;
+    top: 23px;
+    width: 138px;
+    height: 137px;
+    z-index: 34;
+}
+.사각형_3_복사_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 34px;
+    top: 32px;
+    width: 138px;
+    height: 138px;
+    z-index: 33;
+}
+.사각형_3_복사_2 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -12px;
+    top: -14px;
+    width: 138px;
+    height: 138px;
+    z-index: 32;
+}
+.사각형_3_복사 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: -3px;
+    top: -5px;
+    width: 138px;
+    height: 138px;
+    z-index: 31;
+}
+.사각형_3 {
+    background-color: rgb(215, 106, 255);
+    opacity: 0.502;
+    position: absolute;
+    left: 7px;
+    top: 5px;
+    width: 137px;
+    height: 137px;
+    z-index: 30;
+}
+.그룹_8_복사 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 28;
+}
+.사각형_2_복사 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.302;
+    position: absolute;
+    left: 739px;
+    top: 91px;
+    width: 115px;
+    height: 115px;
+    z-index: 27;
+}
+.사각형_2_복사_4 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.702;
+    position: absolute;
+    left: 1060px;
+    top: 825px;
+    width: 50px;
+    height: 50px;
+    z-index: 26;
+}
+.사각형_2_복사_2 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.902;
+    position: absolute;
+    left: 1706px;
+    top: 205px;
+    width: 33px;
+    height: 33px;
+    z-index: 25;
+}
+.사각형_2_복사_3 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.502;
+    position: absolute;
+    left: 1396px;
+    top: 869px;
+    width: 89px;
+    height: 89px;
+    z-index: 24;
+}
+.사각형_2_복사_6 {
+    background-color: rgb(255, 162, 249);
+    opacity: 0.502;
+    position: absolute;
+    left: 1657px;
+    top: 691px;
+    width: 121px;
+    height: 121px;
+    z-index: 23;
+}
+.사각형_2_복사_5 {
+    background-color: rgb(255, 162, 249);
+    opacity: 0.502;
+    position: absolute;
+    left: 1853px;
+    top: 83px;
+    width: 121px;
+    height: 121px;
+    z-index: 22;
+}
+.사각형_2 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.702;
+    position: absolute;
+    left: 1778px;
+    top: 269px;
+    width: 90px;
+    height: 90px;
+    z-index: 21;
+}
+.그룹_8 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 19;
+}
+.사각형_2_복사 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.302;
+    position: absolute;
+    left: -9px;
+    top: 91px;
+    width: 115px;
+    height: 115px;
+    z-index: 18;
+}
+.사각형_2_복사_4 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.702;
+    position: absolute;
+    left: -24px;
+    top: 935px;
+    width: 50px;
+    height: 50px;
+    z-index: 17;
+}
+.사각형_2_복사_2 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.902;
+    position: absolute;
+    left: 924px;
+    top: 205px;
+    width: 33px;
+    height: 33px;
+    z-index: 16;
+}
+.사각형_2_복사_3 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.502;
+    position: absolute;
+    left: 604px;
+    top: 857px;
+    width: 89px;
+    height: 89px;
+    z-index: 15;
+}
+.사각형_2 {
+    background-color: rgb(242, 159, 184);
+    opacity: 0.702;
+    position: absolute;
+    left: 956px;
+    top: 110px;
+    width: 90px;
+    height: 90px;
+    z-index: 14;
+}
+.컬러라인 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 11;
+}
+.그룹_7_복사 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 10;
+}
+.레이어_2_복사 {
+    background-image: url("../img/layer/layer_top_thick.png");
+    opacity: 0.502;
+    position: absolute;
+    left: 0px;
+    top: -67px;
+    width: 1920px;
+    height: 86px;
+    z-index: 9;
+}
+.레이어_2 {
+    background-image: url("../img/layer/layer_top_soft.png");
+    opacity: 0.302;
+    position: absolute;
+    left: 0px;
+    top: -37px;
+    width: 1920px;
+    height: 86px;
+    z-index: 8;
+}
+.그룹_7 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 6;
+}
+.레이어_2_복사 {
+    background-image: url("../img/layer/layer_bottom_thick.png");
+    opacity: 0.502;
+    position: absolute;
+    left: 0px;
+    top: 1037px;
+    width: 1920px;
+    height: 86px;
+    z-index: 5;
+}
+.레이어_2 {
+    background-image: url("../img/layer/layer_bottom_soft.png");
+    opacity: 0.302;
+    position: absolute;
+    left: 0px;
+    top: 996px;
+    width: 1920px;
+    height: 86px;
+    z-index: 4;
+}
