@@ -46,7 +46,7 @@ public class CustomErrorController implements ErrorController {
             // 500 error
             if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
                 model.addAttribute("code", status.toString());
-                model.addAttribute("msg", "로그인을 확인하시고 잠시후 다시 시도해주세요.");
+                model.addAttribute("msg", "서비스 장애 / 잠시후 다시 시도해주세요.");
                 model.addAttribute("timestamp", new Date());
             }
         }

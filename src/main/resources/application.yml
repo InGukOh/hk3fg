@@ -1,5 +1,8 @@
 spring:
   datasource:
+#    url: jdbc:mysql://localhost:3306/hk3fg?serverTimezone=Asia/Seoul
+#    username: root
+#    password: 1234
     url: jdbc:mysql://dhdlsrnr1232.cafe24.com:3306/dhdlsrnr1232?serverTimezone=Asia/Seoul
     username: dhdlsrnr1232
     password: dlsrnr12!
@@ -24,10 +27,13 @@ spring:
       enabled: true
     restart:
       enabled: true
+
   freemarker:
     cache: false
+
   thymeleaf:
     cache: false
+
 logging:
   level:
     org:

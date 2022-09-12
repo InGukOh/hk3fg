@@ -12,8 +12,8 @@
     <div th:insert="common/header.html" id="header"></div>
 
         <div class="mainContent">
-            <div class="error">
 
+            <div class="error">
                 <span th:if="@{${code != '500'}}">
                     <h1 class="error_code"><span th:text="${code}"></span>_Not Found</h1>
                     <hr>

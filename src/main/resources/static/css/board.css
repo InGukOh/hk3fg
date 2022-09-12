@@ -4,41 +4,134 @@
     src: url("../font/bahnschrift.ttf");
     font-family: Bahnschrift;
 }
-table#table_list {
-    text-align: center;
-    border-collapse: collapse;
+.contents_list{
     background-color: #ffffff;
     background-color: rgba(255,255,255,0.8);
-}
-
-.th-1 {
-    width: 10%;
-}
-.th-2 {
-    width: 50%;
-}
-.th-3 {
-    width: 15%;
-}
-.th-4 {
-    width: 15%;
-}
-.th-5 {
-    width: 10%;
-}
-table#table_list,
-table#table_list > th,
-table#table_list > tr , td {
-    /*border: 1px solid black;*/
-}
-
-.btn_paging {
-    /*border:1px solid #ff0000;*/
-    margin: 0px auto;
-    display: flex;
-    justify-content: center;
-}
-.pagination > li,span {
-    margin: 2px 2px auto;
+    font-size: calc(1vw);
+    border: 1px solid #808080;
     border-radius: 5px;
+    margin-top: 1px;
 }
+@media only screen and (min-width: 359px) and (max-width: 575px){
+    .mainContent {
+        /*border: 1px solid #ff0000 !important;*/
+        padding: 0 !important;
+    }
+    .post_wrapper{
+        height: fit-content;
+    }
+    .header_text > *{
+        display: none;
+    }
+    .ht1{
+        display: none !important;
+    }
+    .ht2 {
+       /* border:1px solid #ff0000;*/
+        font-family: Bahnschrift;
+
+        font-weight: bold;
+        font-size: 12px;
+        width: 50%;
+        margin-left: 10px;
+    }
+    .ht3 {
+       /* border:1px solid #ff0000;*/
+        width: 60px;
+        align-content: center;
+        text-align: center;
+    }
+    .ht4 {
+        width: 15%;
+        text-align: center;
+        margin: 0 10px;
+    }
+    .ht5 {
+        width: 10%;
+        text-align: center;
+    }
+    .row_bottom {
+        width: fit-content;
+        margin: 0 0 0 auto;
+    }
+    .pagination{
+        width: inherit !important;
+        /*border: 1px solid #00ffff;*/
+        margin: 0 auto;
+        align-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1800px){
+    .mainContent{
+        width: 80% !important;
+    }
+    .contents_header{
+        background-color: #ffffff;
+        background-color: rgba(255,255,255,0.8);
+        font-size: calc(1vw);
+        border: 1px solid #808080;
+        border-radius: 5px;
+        margin-top: 1px;
+    }
+    .header_text,.post_wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+    .header_text{
+        font-weight: bolder;
+        font-size: 15px;
+    }
+    .header_text > .ht3 , .ht4, .ht5 {
+        margin-left: 60px;
+    }
+    .ht1 {
+       /* border:1px solid #ff0000;*/
+        width: 10%;
+        vertical-align: middle;
+    }
+    .ht2 {
+        /* border:1px solid #ff0000;*/
+        min-width: 300px;
+        max-width: 40%;
+        margin-left: 80px;
+        font-family: Bahnschrift;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .ht3 {
+        /* border:1px solid #ff0000;*/
+        font-weight: bolder;
+        width: 20%;
+        align-content: center;
+        text-align: center;
+    }
+    .ht4 {
+        /* border:1px solid #ff0000;*/
+        width: 20%;
+        text-align: center;
+    }
+    .ht5 {
+        /* border:1px solid #ff0000;*/
+        text-align: center;
+    }
+    .row_bottom {
+        width: 300px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .pagination{
+        width: inherit !important;
+        margin: 0 auto;
+        align-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+}
+

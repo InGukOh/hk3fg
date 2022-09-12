@@ -4,8 +4,9 @@
     src: url("../font/bahnschrift.ttf");
     font-family: Bahnschrift;
 }
-h1#footer_Text {
-    text-align: center;
-    color: #0000ff;
-    font-size: 30px;
+.footer_container {
+    /*border: 1px solid #ff0000;*/
+    padding: 20px;
+    max-width: 1980px;
+    margin: 0px auto;
 }

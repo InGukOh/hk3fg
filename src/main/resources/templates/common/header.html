@@ -5,28 +5,30 @@
 </head>
 <div class="header_container">
     <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 d-flex flex-row bd-highlight mb-3">
-            <li><a href="#" class="nav-link px-2 link-secondary" onclick="location.href='/'" ><img th:src="@{/img/btn_main.png}" class="img_btn"></a></li>
-            <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/list/?page=1'"><img th:src="@{/img/btn_board.png}" class="img_btn"></a></li>
-            <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/game_BungterMelon'"><img th:src="@{/img/btn_game.png}" class="img_btn"></a></li>
-            <li><a href="#" class="nav-link px-2 link-dark"><img th:src="@{/img/btn_scoreboard.png}" class="img_btn"></a></li>
-        </ul>
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center">
+                <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
 
-        <div class="col-md-3 text-end">
-            <a sec:authorize ="isAuthenticated()" class="btn btn-secondary me-2 show_uID"><span th:text="${Login_uID}"></span></a>
-            <a class="btn btn-outline-primary me-2"
-                    sec:authorize ="isAnonymous()" th:href="@{/member/login}">Login</a>
-            <a class="btn btn-outline-primary me-2"
-                    sec:authorize ="isAuthenticated()" th:href="@{/member/logout}">LogOut</a>
-            <a class="btn btn-primary"
-                    sec:authorize ="isAnonymous()" th:href="@{/member/signUp}">Sign-up</a>
-        </div>
-    </header>
+            <ul class="d-flex nav">
+                <li><a href="#" class="nav-link px-2 link-secondary" onclick="location.href='/'" ><img th:src="@{/img/btn_main.png}" class="img_btn"></a></li>
+                <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/list/?page=1'"><img th:src="@{/img/btn_board.png}" class="img_btn"></a></li>
+                <li><a href="#" class="nav-link px-2 link-dark" onclick="location.href='/game_BungterMelon'"><img th:src="@{/img/btn_game.png}" class="img_btn"></a></li>
+                <li><a href="#" class="nav-link px-2 link-dark"><img th:src="@{/img/btn_scoreboard.png}" class="img_btn"></a></li>
+            </ul>
+
+            <div class="col-md-3 text-end">
+                <a sec:authorize ="isAuthenticated()" class="btn btn-secondary me-2 show_uID"><span th:text="${Login_uID}"></span></a>
+                <a class="btn btn-outline-primary me-2"
+                        sec:authorize ="isAnonymous()" th:href="@{/member/login}">Login</a>
+                <a class="btn btn-outline-primary me-2"
+                        sec:authorize ="isAuthenticated()" th:href="@{/member/logout}">LogOut</a>
+                <a class="btn btn-primary"
+                        sec:authorize ="isAnonymous()" th:href="@{/member/signUp}">Sign-up</a>
+            </div>
+        </header>
+
     </div>
 </div>
 

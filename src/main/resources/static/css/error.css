@@ -6,7 +6,7 @@
 }
 
 .error {
-    border: 1px solid #000000;
+   /* border: 1px solid #000000;*/
     margin: 0 auto;
     text-align: center;
     padding: 20px;
@@ -19,20 +19,24 @@
 .error_code {
     text-align: center;
     margin: 0 auto;
+    font-family: Bahnschrift;
 }
 
 .error_msg {
     text-align: center;
     margin: 20px auto;
+    font-family: Bahnschrift;
 }
 
 .error_timestamp {
     text-align: center;
     margin-right: 0px;
+    font-family: Bahnschrift;
 
 }
 
 .error_default_msg {
     text-align: center;
     margin: 30px auto;
+    font-family: Bahnschrift;
 }

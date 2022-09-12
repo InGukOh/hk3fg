@@ -13,8 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
 import java.util.*;
 
 
@@ -22,7 +22,6 @@ import java.util.*;
 @AllArgsConstructor
 public class BoardController {
     private BoardService boardService;
-
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/")
@@ -38,13 +37,18 @@ public class BoardController {
     public String list(Model model, @RequestParam(value="page", defaultValue = "1") Integer pageNum) {
         logger.info("BoardController : list / Action : list OPEN | start");
         String Method_Name = "list";
+        LocalDate now = LocalDate.now();
         String username = InfoController.get_Uid();
 
         List<BoardDto> boardList = boardService.getBoardlist(pageNum);
         Integer[] pageList = boardService.getPageList(pageNum,Method_Name,"");
         Integer totalLastPageNum = boardService.totalLastPageNum(Method_Name,"");
 
+        logger.info("now : " + now);
+        logger.info("boardList : " + boardList);
         logger.info("pageList : " + Arrays.toString(Arrays.stream(pageList).filter(i -> i != null).toArray()));
+
+        model.addAttribute("today",String.valueOf(now));
         model.addAttribute("boardList", boardList);
         model.addAttribute("pageList", Arrays.stream(pageList).filter(i -> i != null).toArray());
         model.addAttribute("prevBlock",(pageNum-10 <= 0)? 1 : pageNum-10);
