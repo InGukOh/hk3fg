@@ -1,6 +1,9 @@
 @import "background.css";
 @import "default_set.css";
-
+@font-face {
+    src: url("../font/bahnschrift.ttf");
+    font-family: Bahnschrift;
+}
 div#input_div_content_editable {
     border: #000000 3px solid;
     border-radius: 3px;

@@ -1,0 +1,6 @@
+@import "background.css";
+@import "default_set.css";
+@font-face {
+    src: url("../font/bahnschrift.ttf");
+    font-family: Bahnschrift;
+}

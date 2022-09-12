@@ -32,6 +32,8 @@ public class GameController {
 
         UserDto userDto = loginService.getUserInfo(username);
 
+        logger.info("userDTO Info : " + String.valueOf(userDto));
+
         model.addAttribute("uID_Info",userDto);
         model.addAttribute("Login_uID", username);
         if (username.equals("anonymousUser")) return "/member/loginForm";

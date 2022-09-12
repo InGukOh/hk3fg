@@ -1,0 +1,38 @@
+@import "background.css";
+@import "default_set.css";
+@font-face {
+    src: url("../font/bahnschrift.ttf");
+    font-family: Bahnschrift;
+}
+
+.error {
+    border: 1px solid #000000;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.error > *{
+    font-family: Bahnschrift;
+}
+.error_code {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.error_msg {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.error_timestamp {
+    text-align: center;
+    margin-right: 0px;
+
+}
+
+.error_default_msg {
+    text-align: center;
+    margin: 30px auto;
+}
