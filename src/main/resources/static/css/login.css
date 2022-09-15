@@ -4,3 +4,21 @@
     src: url("../font/bahnschrift.ttf");
     font-family: Bahnschrift;
 }
+
+.form-signin {
+    margin-top: 20%;
+    padding: 10%;
+}
+.page_massage {
+    border:1px solid #000000;
+    border-radius: 10px;
+    background-color: #ffb8c6;
+    padding-top: 10px;
+}
+.form_input {
+    margin: 10px 0;
+}
+h1.h3 {
+    color: #5c636a;
+    text-align: center;
+}

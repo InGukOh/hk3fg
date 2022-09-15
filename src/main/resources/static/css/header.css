@@ -36,3 +36,30 @@
     position: absolute;
     right: 90px;
 }
+
+@media only screen and (min-width: 359px) and (max-width: 575px){
+    ul.d-flex{
+        width: fit-content !important;
+/*        border:1px solid #0000ff;*/
+        display: grid;
+    }
+    ul.d-flex > li:nth-child(3){
+       /* border:1px solid #ff0000;*/
+        width: 40%;
+    }
+    ul.d-flex > li:nth-child(4){
+   /*     border:1px solid #00ff00;*/
+        width: 60%;
+    }
+
+
+    div.col-md-3 {
+       /*border:1px solid #00ff00;*/
+       width: fit-content;
+       display: flex;
+       flex-direction: column;
+   }
+    div.col-md-3 > a {
+        margin: 10px;
+    }
+}

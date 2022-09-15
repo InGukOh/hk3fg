@@ -14,7 +14,7 @@
 }
 @media only screen and (min-width: 359px) and (max-width: 575px){
     .mainContent {
-        /*border: 1px solid #ff0000 !important;*/
+       /* border: 1px solid #ff0000 !important;*/
         padding: 0 !important;
     }
     .post_wrapper{

@@ -29,8 +29,6 @@ public class CustomErrorController implements ErrorController {
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
         HttpStatus httpStatus = HttpStatus.valueOf(Integer.valueOf(status.toString()));
 
-        logger.info("httpStatus : "+httpStatus.toString());
-
         if (status != null) {
             int statusCode = Integer.valueOf(status.toString());
 

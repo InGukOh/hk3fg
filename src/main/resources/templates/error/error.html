@@ -11,26 +11,27 @@
 <!-- HEADER -->
     <div th:insert="common/header.html" id="header"></div>
 
-        <div class="mainContent">
+    <div class="mainContent">
 
-            <div class="error">
-                <span th:if="@{${code != '500'}}">
-                    <h1 class="error_code"><span th:text="${code}"></span>_Not Found</h1>
-                    <hr>
-                </span>
+        <div class="error">
+                    <span th:if="@{${code != '500'}}">
+                        <h1 class="error_code"><span th:text="${code}"></span>_Not Found</h1>
+                        <hr>
+                    </span>
 
-                <h2 class="error_msg"><span th:text="${msg}"></span></h2>
-                <h6 class="error_timestamp"><span th:text="${timestamp}"></span></h6>
+            <h2 class="error_msg"><span th:text="${msg}"></span></h2>
+            <h6 class="error_timestamp"><span th:text="${timestamp}"></span></h6>
 
-                <h1 class="error_default_msg">잠시후 메인페이지로 돌아갑니다.</h1>
-            </div>
+            <h1 class="error_default_msg">잠시후 메인페이지로 돌아갑니다.</h1>
         </div>
+
+    </div>
 
     <!-- FOOTER -->
     <div th:insert="common/footer.html" id="footer"></div>
 
 <script>
-    /*setTimeout('location.href="/"', 3000);*/
+    setTimeout('location.href="/"', 3000);
 </script>
 <script th:inline="javascript">
 </script>
