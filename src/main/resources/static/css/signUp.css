@@ -4,3 +4,49 @@
     src: url("../font/bahnschrift.ttf");
     font-family: Bahnschrift;
 }
+
+@media only screen and (min-width: 359px) and (max-width: 575px) {
+    .form-signin {
+        margin-top: 20%;
+        padding: 10%;
+        border: 1px solid #000000;
+    }
+
+    .page_massage {
+        border: 1px solid #000000;
+        border-radius: 10px;
+        background-color: #ffb8c6;
+        padding-top: 10px;
+    }
+
+    .form_input {
+        margin: 10px 0;
+    }
+
+    h1.h3 {
+        color: #5c636a;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 575px) and (max-width: 1800px) {
+    .form-signin {
+        margin-top: 10%;
+        padding: 0 30%;
+    }
+
+    .page_massage {
+        border: 1px solid #000000;
+        border-radius: 10px;
+        background-color: #ffb8c6;
+    }
+
+    .form_input {
+        margin: 10px 0;
+    }
+
+    h1.h3 {
+        color: #5c636a;
+        text-align: center;
+    }
+}

@@ -20,3 +20,22 @@
     height: 640px;
     position: relative;
 }
+.iframe_game{
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width: 359px) and (max-width: 575px) {
+    .View_Game {
+        margin: 0px auto;
+        border:2px solid #000000;
+        border-radius: 20px;
+        width: calc(100% + 10*2%);
+        margin: 10% 0 10% -10%;
+        position: relative;
+    }
+    .iframe_game{
+        position: absolute;
+        width: 100%;
+    }
+}
