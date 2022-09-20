@@ -38,4 +38,7 @@
         position: absolute;
         width: 100%;
     }
+    div#canvasDiv{
+        width: 360px;
+    }
 }
