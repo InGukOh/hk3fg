@@ -49,4 +49,21 @@ public class GameController {
 
         return "redirect:/game_BungterMelon";
     }
+    @GetMapping("/score_board")
+    public String ScorePage(Model model){
+        logger.info("GameController : ScorePage / Action : GamePage OPEN | Activate");
+        String username = InfoController.get_Uid();
+
+//        UserDto userDto = loginService.getUserInfo(username);
+//
+//        logger.info("userDTO Info : " + String.valueOf(userDto));
+//
+//        model.addAttribute("uID_Info",userDto);
+
+        List<GameDto> ScoreList = gameService.getScorelist();
+        model.addAttribute("Login_uID", username);
+        model.addAttribute("ScoreList",ScoreList);
+
+        return "/game/score_board";
+    }
 }

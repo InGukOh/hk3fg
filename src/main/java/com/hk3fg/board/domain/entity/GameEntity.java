@@ -19,13 +19,13 @@ public class GameEntity {
     @Column(length = 10, nullable = false)
     private String uID;
 
-    @Column(length = 10)
+    @Column(length = 10, name = "game_score")
     private int gameScore;
 
     @Builder
-    public GameEntity(Long player_Num , String uID, int gameScore) {
+    public GameEntity(Long player_Num , String uID, int game_score) {
         this.player_Num  = player_Num ;
         this.uID = uID;
-        this.gameScore = gameScore;
+        this.gameScore = game_score;
     }
 }

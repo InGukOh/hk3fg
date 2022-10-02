@@ -16,8 +16,9 @@
     <!-- HEADER -->
     <div th:insert="common/header.html" id="header"></div>
 
-    <div class="mainContent container-fluid" id="fragment_list" th:fragment="fragment_list(page)">
 
+    <div class="mainContent container-fluid" id="fragment_list" th:fragment="fragment_list(page)">
+        <a th:if="${Login_UID != 'anonymousUser'}" th:href="@{/post}">글쓰기</a>
         <div class="contents_header">
                 <div class="header_text">
                     <div class="row_top">

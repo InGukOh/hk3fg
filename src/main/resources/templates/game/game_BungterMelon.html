@@ -23,7 +23,7 @@
         <div id="input_gameScore" >
             <form action="/game_BungterMelon" method="post" name="post_gameScore" id="post_gameScore" ><!--onsubmit="return false"-->
                 <input type="text" id="player_Num" name="player_Num" th:value="${uID_Info.getUID_Num()}">
-                <input type="text" id="gameScore" name="gameScore" th:value=0>
+                <input type="text" id="game_score" name="game_score">
                 <input type="text" id="uID" name="uID" th:value="${Login_uID}">
                 <button type="submit" id="btn_submit" onclick="log()">게임 점수 등록</button>
             </form>
@@ -47,7 +47,7 @@
     </script>
 
     <script type="text/javascript">
-        var input_score = document.getElementById("gameScore");
+        var input_score = document.getElementById("game_score");
 
         window.addEventListener('message', function(e) {
             console.log('메세지 받음');

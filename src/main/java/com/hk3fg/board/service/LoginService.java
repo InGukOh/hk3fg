@@ -59,7 +59,9 @@ public class LoginService implements UserDetailsService {
     }
     @Transactional
     public UserDto getUserInfo(String uID){
-
+        if(uID.equals("anonymousUser")){
+            return null;
+        }
         Optional<UserEntity> userEntityWrapper = userRepository.findByuID(uID);
         UserEntity userEntity = userEntityWrapper.get();
 

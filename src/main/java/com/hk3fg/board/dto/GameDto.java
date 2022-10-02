@@ -17,7 +17,7 @@ public class GameDto {
 
     private String uID;
 
-    private int gameScore;
+    private int game_score;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -25,27 +25,25 @@ public class GameDto {
 
         logger.info("GameDto : toEntity / Action : saving Data(게임 점수) | start");
 
-        logger.info("uID_Num : " + player_Num + " uID : " + uID + " gameScore : " + gameScore);
+        logger.info("uID_Num : " + player_Num + " uID : " + uID + " gameScore : " + game_score);
 
         GameEntity gameEntity = GameEntity.builder()
-                .player_Num (player_Num )
+                .player_Num (player_Num)
                 .uID(uID)
-                .gameScore(gameScore)
+                .game_score(game_score)
                 .build();
 
         logger.info("GameDto : toEntity / Action : saving Data(게임 점수) | end\n");
 
         return gameEntity;
     }
-  /*  @Builder
-    public BoardDto(Long id, String title, String content, String writer, LocalDateTime createdDate, LocalDateTime modifiedDate) {
-        logger.info("BoardDto : BoardDto / Action : loading id : "+ id+" |");
-        this.id = id;
-        this.writer = writer;
-        this.title = title;
-        this.content = content;
-        this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
-    }*/
+    @Builder
+    public GameDto(String uID, Long player_Num, int game_score) {
+        logger.info("GameDto : GameDto / Action : loading gameScore : "+ uID+" |");
+        this.uID = uID;
+        this.player_Num = player_Num;
+        this.game_score = game_score;
+
+    }
 
 }
